@@ -1,0 +1,1259 @@
+[
+    {
+        "scenario": "verify pin block decryption is correct for msr transaction when encryption is off",
+        "found_steps": [
+            "Precondition",
+            "Card Swipe",
+            "CVM Process"
+        ],
+        "missing_steps": [
+            "Send Amount",
+            "Data Parsing",
+            "Confirmation",
+            "Transaction Completion"
+        ],
+        "is_order_correct": false,
+        "is_valid_script": false,
+        "file": "01_dukpt_pin_when_encryption_off_msr_transaction.feature"
+    },
+    {
+        "scenario": "Check MSR flow using 41.x (track1 ,track2)",
+        "found_steps": [
+            "Precondition",
+            "Data Parsing"
+        ],
+        "missing_steps": [
+            "Send Amount",
+            "Card Swipe",
+            "Confirmation",
+            "CVM Process",
+            "Transaction Completion"
+        ],
+        "is_order_correct": false,
+        "is_valid_script": false,
+        "file": "01_swipe_using_41.feature"
+    },
+    {
+        "scenario": "On-Guard SDE Encryption For MSR Transaction with only track1 data",
+        "found_steps": [
+            "Precondition",
+            "Card Swipe"
+        ],
+        "missing_steps": [
+            "Send Amount",
+            "Data Parsing",
+            "Confirmation",
+            "CVM Process",
+            "Transaction Completion"
+        ],
+        "is_order_correct": false,
+        "is_valid_script": false,
+        "file": "01_validate_1track_only_msr_encryption_when_OGSDE.feature"
+    },
+    {
+        "scenario": "chapter X Encryption For MSR Transaction",
+        "found_steps": [
+            "Precondition",
+            "Card Swipe"
+        ],
+        "missing_steps": [
+            "Send Amount",
+            "Data Parsing",
+            "Confirmation",
+            "CVM Process",
+            "Transaction Completion"
+        ],
+        "is_order_correct": false,
+        "is_valid_script": false,
+        "file": "01_validate_chapterX_encryption_msr_transaction.feature"
+    },
+    {
+        "scenario": "On-Guard FPE Encryption For MSR Transaction",
+        "found_steps": [
+            "Precondition",
+            "Card Swipe"
+        ],
+        "missing_steps": [
+            "Send Amount",
+            "Data Parsing",
+            "Confirmation",
+            "CVM Process",
+            "Transaction Completion"
+        ],
+        "is_order_correct": false,
+        "is_valid_script": false,
+        "file": "01_validate_on_guard_fpe_encryption_msr_transaction.feature"
+    },
+    {
+        "scenario": "On-Guard SDE Encryption For MSR Transaction",
+        "found_steps": [
+            "Precondition",
+            "Card Swipe"
+        ],
+        "missing_steps": [
+            "Send Amount",
+            "Data Parsing",
+            "Confirmation",
+            "CVM Process",
+            "Transaction Completion"
+        ],
+        "is_order_correct": false,
+        "is_valid_script": false,
+        "file": "01_Validate_on_guard_sde_encryption_for_msr_transaction.feature"
+    },
+    {
+        "scenario": "RSA Encryption For MSR Transaction",
+        "found_steps": [
+            "Precondition",
+            "Card Swipe"
+        ],
+        "missing_steps": [
+            "Send Amount",
+            "Data Parsing",
+            "Confirmation",
+            "CVM Process",
+            "Transaction Completion"
+        ],
+        "is_order_correct": false,
+        "is_valid_script": false,
+        "file": "01_Validate_RSA_encryption_for_msr_transaction.feature"
+    },
+    {
+        "scenario": "On-Guard SDE Encryption For MSR Transaction",
+        "found_steps": [
+            "Precondition",
+            "Card Swipe"
+        ],
+        "missing_steps": [
+            "Send Amount",
+            "Data Parsing",
+            "Confirmation",
+            "CVM Process",
+            "Transaction Completion"
+        ],
+        "is_order_correct": false,
+        "is_valid_script": false,
+        "file": "01_validate_separator_arc-sec_on_guard_sde_encryption_for_manual-entry_transaction.feature"
+    },
+    {
+        "scenario": "Voltage TEP6 Encryption for MSR transaction",
+        "found_steps": [
+            "Precondition",
+            "Card Swipe",
+            "Data Parsing"
+        ],
+        "missing_steps": [
+            "Send Amount",
+            "Confirmation",
+            "CVM Process",
+            "Transaction Completion"
+        ],
+        "is_order_correct": false,
+        "is_valid_script": false,
+        "file": "01_validate_voltage_encryption_tep6_for_msr_transaction.feature"
+    },
+    {
+        "scenario": "Voltage TEP7 Encryption for MSR transaction",
+        "found_steps": [
+            "Precondition",
+            "Card Swipe",
+            "Data Parsing"
+        ],
+        "missing_steps": [
+            "Send Amount",
+            "Confirmation",
+            "CVM Process",
+            "Transaction Completion"
+        ],
+        "is_order_correct": false,
+        "is_valid_script": false,
+        "file": "01_validate_voltage_encryption_tep7_for_msr_transaction.feature"
+    },
+    {
+        "scenario": "Perform MSR transaction and change weak pin with a strong entered pin",
+        "found_steps": [
+            "Precondition",
+            "Data Parsing",
+            "Card Swipe",
+            "CVM Process"
+        ],
+        "missing_steps": [
+            "Send Amount",
+            "Confirmation",
+            "Transaction Completion"
+        ],
+        "is_order_correct": false,
+        "is_valid_script": false,
+        "file": "01_valid_pin_change_with_strong_pin.feature"
+    },
+    {
+        "scenario": "verify pin block decryption is correct with masked pan",
+        "found_steps": [
+            "Precondition",
+            "Card Swipe",
+            "CVM Process"
+        ],
+        "missing_steps": [
+            "Send Amount",
+            "Data Parsing",
+            "Confirmation",
+            "Transaction Completion"
+        ],
+        "is_order_correct": false,
+        "is_valid_script": false,
+        "file": "01_verify_master_session_pin_for_msr_transaction_when_og_sde_enabled.feature"
+    },
+    {
+        "scenario": "Manual entry transaction with 23.x and 29.x message to verify variables 396 398 399 400",
+        "found_steps": [
+            "Card Swipe",
+            "Precondition",
+            "Data Parsing"
+        ],
+        "missing_steps": [
+            "Send Amount",
+            "Confirmation",
+            "CVM Process",
+            "Transaction Completion"
+        ],
+        "is_order_correct": false,
+        "is_valid_script": false,
+        "file": "01_verify_message_29x_variables_396_398_399_400_manual_entry_and_msr.feature"
+    },
+    {
+        "scenario": "On-Guard SDE Encryption For MSR Transaction with only track1 data and track encryption indicator =1",
+        "found_steps": [
+            "Precondition",
+            "Card Swipe"
+        ],
+        "missing_steps": [
+            "Send Amount",
+            "Data Parsing",
+            "Confirmation",
+            "CVM Process",
+            "Transaction Completion"
+        ],
+        "is_order_correct": false,
+        "is_valid_script": false,
+        "file": "01_verify_track_encryption_indicator_different_tracks_msr.feature"
+    },
+    {
+        "scenario": "Perform MSR transaction and enter an invalid PIN where the cardholder will enter the same weak PIN in the first and second attempt",
+        "found_steps": [
+            "Precondition",
+            "Data Parsing",
+            "Card Swipe",
+            "CVM Process"
+        ],
+        "missing_steps": [
+            "Send Amount",
+            "Confirmation",
+            "Transaction Completion"
+        ],
+        "is_order_correct": false,
+        "is_valid_script": false,
+        "file": "02_first_entered_pin_is_weak_and_matches_the_second_entered_pin.feature"
+    },
+    {
+        "scenario": "Check MSR flow while using Non-Standard cards with two tracks(track1 ,track2)",
+        "found_steps": [
+            "Precondition"
+        ],
+        "missing_steps": [
+            "Send Amount",
+            "Card Swipe",
+            "Data Parsing",
+            "Confirmation",
+            "CVM Process",
+            "Transaction Completion"
+        ],
+        "is_order_correct": false,
+        "is_valid_script": false,
+        "file": "02_swipe_nonstandard_using_41.feature"
+    },
+    {
+        "scenario": "On-Guard SDE Encryption For MSR Transaction",
+        "found_steps": [
+            "Precondition",
+            "Card Swipe"
+        ],
+        "missing_steps": [
+            "Send Amount",
+            "Data Parsing",
+            "Confirmation",
+            "CVM Process",
+            "Transaction Completion"
+        ],
+        "is_order_correct": false,
+        "is_valid_script": false,
+        "file": "02_validate_separator_arc-sec_on_guard_sde_encryption_for_msr_transaction.feature"
+    },
+    {
+        "scenario": "whitelisting with chapter X Encryption For MSR Transaction",
+        "found_steps": [
+            "Precondition",
+            "Card Swipe"
+        ],
+        "missing_steps": [
+            "Send Amount",
+            "Data Parsing",
+            "Confirmation",
+            "CVM Process",
+            "Transaction Completion"
+        ],
+        "is_order_correct": false,
+        "is_valid_script": false,
+        "file": "02_validate_whitelisting_with_chapterX_encryption_msr_transaction.feature"
+    },
+    {
+        "scenario": "Whitelisting with on guard FPE for MSR Transaction",
+        "found_steps": [
+            "Precondition",
+            "Send Amount",
+            "Card Swipe"
+        ],
+        "missing_steps": [
+            "Data Parsing",
+            "Confirmation",
+            "CVM Process",
+            "Transaction Completion"
+        ],
+        "is_order_correct": false,
+        "is_valid_script": false,
+        "file": "02_validate_whitelisting_with_on_guard_fpe_for_msr_transaction.feature"
+    },
+    {
+        "scenario": "RSA Encryption For MSR Transaction",
+        "found_steps": [
+            "Precondition",
+            "Card Swipe",
+            "Data Parsing"
+        ],
+        "missing_steps": [
+            "Send Amount",
+            "Confirmation",
+            "CVM Process",
+            "Transaction Completion"
+        ],
+        "is_order_correct": false,
+        "is_valid_script": false,
+        "file": "02_validate_whitelisting_with_RSA_for_msr_transaction.feature"
+    },
+    {
+        "scenario": "verify pin block decryption is correct with masked pan",
+        "found_steps": [
+            "Precondition",
+            "Card Swipe",
+            "CVM Process"
+        ],
+        "missing_steps": [
+            "Send Amount",
+            "Data Parsing",
+            "Confirmation",
+            "Transaction Completion"
+        ],
+        "is_order_correct": false,
+        "is_valid_script": false,
+        "file": "02_verify_master_session_pin_for_msr_transaction_when_og_fpe_enabled.feature"
+    },
+    {
+        "scenario": "Manual entry transaction with 23.x and 29.x message to verify variables 396 398 399 400 when FPE encryption enabled",
+        "found_steps": [
+            "Data Parsing",
+            "Precondition",
+            "Card Swipe"
+        ],
+        "missing_steps": [
+            "Send Amount",
+            "Confirmation",
+            "CVM Process",
+            "Transaction Completion"
+        ],
+        "is_order_correct": false,
+        "is_valid_script": false,
+        "file": "02_verify_message_29x_variables_396_398_399_400_when_OGFPE.feature"
+    },
+    {
+        "scenario": "On-Guard SDE Encryption For Manual Entry Transaction with encryption indicator =3",
+        "found_steps": [
+            "Precondition",
+            "Card Swipe"
+        ],
+        "missing_steps": [
+            "Send Amount",
+            "Data Parsing",
+            "Confirmation",
+            "CVM Process",
+            "Transaction Completion"
+        ],
+        "is_order_correct": false,
+        "is_valid_script": false,
+        "file": "02_verify_track_encryption_indicator_manual_entry.feature"
+    },
+    {
+        "scenario": "Perform MSR transaction and enter an invalid PIN where the cardholder will enter the same strong PIN in the first and second attempt",
+        "found_steps": [
+            "Precondition",
+            "Data Parsing",
+            "Card Swipe",
+            "CVM Process"
+        ],
+        "missing_steps": [
+            "Send Amount",
+            "Confirmation",
+            "Transaction Completion"
+        ],
+        "is_order_correct": false,
+        "is_valid_script": false,
+        "file": "03_first_entered_pin_is_strong_and_matches_the_second_entered_pin.feature"
+    },
+    {
+        "scenario": "Not found",
+        "found_steps": [
+            "Precondition"
+        ],
+        "missing_steps": [
+            "Send Amount",
+            "Card Swipe",
+            "Data Parsing",
+            "Confirmation",
+            "CVM Process",
+            "Transaction Completion"
+        ],
+        "is_order_correct": false,
+        "is_valid_script": false,
+        "file": "03_swipe_with_req_parsed_fields.feature"
+    },
+    {
+        "scenario": "verify pin block decryption is correct with masked pan",
+        "found_steps": [
+            "Precondition",
+            "Card Swipe",
+            "Data Parsing",
+            "CVM Process"
+        ],
+        "missing_steps": [
+            "Send Amount",
+            "Confirmation",
+            "Transaction Completion"
+        ],
+        "is_order_correct": false,
+        "is_valid_script": false,
+        "file": "03_verify_master_session_pin_for_msr_transaction_when_tep2_enabled.feature"
+    },
+    {
+        "scenario": "Manual entry transaction with 23.x and 29.x message to verify variables 396 398 399 400 when SDE encryption enabled",
+        "found_steps": [
+            "Data Parsing",
+            "Precondition",
+            "Card Swipe"
+        ],
+        "missing_steps": [
+            "Send Amount",
+            "Confirmation",
+            "CVM Process",
+            "Transaction Completion"
+        ],
+        "is_order_correct": false,
+        "is_valid_script": false,
+        "file": "03_verify_message_29x_variables_396_398_399_400_when_OGSDE.feature"
+    },
+    {
+        "scenario": "Perform MSR transaction and enter an invalid PIN where the cardholder enter a 3rd entered pin doesnt match the second enetered pin",
+        "found_steps": [
+            "Precondition",
+            "Data Parsing",
+            "Card Swipe",
+            "CVM Process"
+        ],
+        "missing_steps": [
+            "Send Amount",
+            "Confirmation",
+            "Transaction Completion"
+        ],
+        "is_order_correct": false,
+        "is_valid_script": false,
+        "file": "04_invalid_pin_change_third_entered_pin_does_not_match_second_entered_pin.feature"
+    },
+    {
+        "scenario": "Check MSR flow while using 87.x with Non-Standard two tracks(track1 ,track2)",
+        "found_steps": [
+            "Precondition"
+        ],
+        "missing_steps": [
+            "Send Amount",
+            "Card Swipe",
+            "Data Parsing",
+            "Confirmation",
+            "CVM Process",
+            "Transaction Completion"
+        ],
+        "is_order_correct": false,
+        "is_valid_script": false,
+        "file": "04_swipe_non_standard_using_87.feature"
+    },
+    {
+        "scenario": "Not found",
+        "found_steps": [
+            "Precondition"
+        ],
+        "missing_steps": [
+            "Send Amount",
+            "Card Swipe",
+            "Data Parsing",
+            "Confirmation",
+            "CVM Process",
+            "Transaction Completion"
+        ],
+        "is_order_correct": false,
+        "is_valid_script": false,
+        "file": "04_swipe_without_req_parsed_fields.feature"
+    },
+    {
+        "scenario": "verify pin block decryption is correct with masked pan",
+        "found_steps": [
+            "Precondition",
+            "Card Swipe",
+            "Data Parsing",
+            "CVM Process"
+        ],
+        "missing_steps": [
+            "Send Amount",
+            "Confirmation",
+            "Transaction Completion"
+        ],
+        "is_order_correct": false,
+        "is_valid_script": false,
+        "file": "04_verify_master_session_pin_for_msr_transaction_when_tep4_enabled.feature"
+    },
+    {
+        "scenario": "Perform MSR transaction and enter an invalid PIN change where the cardholder types the second entered PIN with more than 10 digits",
+        "found_steps": [
+            "Precondition",
+            "Data Parsing",
+            "Card Swipe",
+            "CVM Process"
+        ],
+        "missing_steps": [
+            "Send Amount",
+            "Confirmation",
+            "Transaction Completion"
+        ],
+        "is_order_correct": false,
+        "is_valid_script": false,
+        "file": "05_invalid_pin_change_second_entered_pin_has_10_11digits.feature"
+    },
+    {
+        "scenario": "Check MSR flow while using 87.x with two tracks(track1 ,track2)",
+        "found_steps": [
+            "Precondition"
+        ],
+        "missing_steps": [
+            "Send Amount",
+            "Card Swipe",
+            "Data Parsing",
+            "Confirmation",
+            "CVM Process",
+            "Transaction Completion"
+        ],
+        "is_order_correct": false,
+        "is_valid_script": false,
+        "file": "05_swipe_with_using_87.feature"
+    },
+    {
+        "scenario": "On-Demand Messages using 41.x EFT message",
+        "found_steps": [
+            "Precondition",
+            "Confirmation",
+            "CVM Process"
+        ],
+        "missing_steps": [
+            "Send Amount",
+            "Card Swipe",
+            "Data Parsing",
+            "Transaction Completion"
+        ],
+        "is_order_correct": false,
+        "is_valid_script": false,
+        "file": "05_validate_on_demand_messages_using_41.feature"
+    },
+    {
+        "scenario": "verify pin block decryption is correct with masked pan",
+        "found_steps": [
+            "Precondition",
+            "Card Swipe",
+            "Data Parsing",
+            "CVM Process"
+        ],
+        "missing_steps": [
+            "Send Amount",
+            "Confirmation",
+            "Transaction Completion"
+        ],
+        "is_order_correct": false,
+        "is_valid_script": false,
+        "file": "05_verify_master_session_pin_for_msr_transaction_when_tep6_enabled.feature"
+    },
+    {
+        "scenario": "Perform MSR transaction and valid PIN change where the cardholder will type the second entered PIN is more than 4 digits and less than 10 digits",
+        "found_steps": [
+            "Precondition",
+            "Data Parsing",
+            "Card Swipe",
+            "CVM Process"
+        ],
+        "missing_steps": [
+            "Send Amount",
+            "Confirmation",
+            "Transaction Completion"
+        ],
+        "is_order_correct": false,
+        "is_valid_script": false,
+        "file": "06_vaid_pin_change_second_pin_entry_is_more_than_4digits_less_than_10digits.feature"
+    },
+    {
+        "scenario": "On-Demand Messages using 87.x EFT message",
+        "found_steps": [
+            "Precondition",
+            "Confirmation",
+            "CVM Process"
+        ],
+        "missing_steps": [
+            "Send Amount",
+            "Card Swipe",
+            "Data Parsing",
+            "Transaction Completion"
+        ],
+        "is_order_correct": false,
+        "is_valid_script": false,
+        "file": "06_validate_on_demand_messages_using_87.feature"
+    },
+    {
+        "scenario": "verify pin block decryption is correct with masked pan",
+        "found_steps": [
+            "Precondition",
+            "Card Swipe",
+            "Data Parsing",
+            "CVM Process"
+        ],
+        "missing_steps": [
+            "Send Amount",
+            "Confirmation",
+            "Transaction Completion"
+        ],
+        "is_order_correct": false,
+        "is_valid_script": false,
+        "file": "06_verify_master_session_pin_for_msr_transaction_when_tep7_enabled.feature"
+    },
+    {
+        "scenario": "Perform MSR transaction and enter an invalid PIN change where the cardholder types the second entered PIN with 12 digits",
+        "found_steps": [
+            "Precondition",
+            "Data Parsing",
+            "Card Swipe",
+            "CVM Process"
+        ],
+        "missing_steps": [
+            "Send Amount",
+            "Confirmation",
+            "Transaction Completion"
+        ],
+        "is_order_correct": false,
+        "is_valid_script": false,
+        "file": "07_invalid_pin_change_second_entered_pin_has_more_than_12digits.feature"
+    },
+    {
+        "scenario": "verify pin block decryption is correct with masked pan",
+        "found_steps": [
+            "Precondition",
+            "Card Swipe",
+            "CVM Process"
+        ],
+        "missing_steps": [
+            "Send Amount",
+            "Data Parsing",
+            "Confirmation",
+            "Transaction Completion"
+        ],
+        "is_order_correct": false,
+        "is_valid_script": false,
+        "file": "07_verify_master_session_pin_for_msr_transaction_when_rsa_enabled.feature"
+    },
+    {
+        "scenario": "verify pin block decryption is correct with masked pan",
+        "found_steps": [
+            "Precondition",
+            "Card Swipe",
+            "CVM Process"
+        ],
+        "missing_steps": [
+            "Send Amount",
+            "Data Parsing",
+            "Confirmation",
+            "Transaction Completion"
+        ],
+        "is_order_correct": false,
+        "is_valid_script": false,
+        "file": "08_verify_master_session_pin_for_msr_transaction_when_chapterX_enabled.feature"
+    },
+    {
+        "scenario": "Send 23.x Card Read Request swipe first track",
+        "found_steps": [
+            "Card Swipe",
+            "Precondition"
+        ],
+        "missing_steps": [
+            "Send Amount",
+            "Data Parsing",
+            "Confirmation",
+            "CVM Process",
+            "Transaction Completion"
+        ],
+        "is_order_correct": false,
+        "is_valid_script": false,
+        "file": "10_swipe_one_track.feature"
+    },
+    {
+        "scenario": "Check MSR flow while using Non-Standard cards with two tracks(track1 ,track2)",
+        "found_steps": [
+            "Card Swipe",
+            "Precondition"
+        ],
+        "missing_steps": [
+            "Send Amount",
+            "Data Parsing",
+            "Confirmation",
+            "CVM Process",
+            "Transaction Completion"
+        ],
+        "is_order_correct": false,
+        "is_valid_script": false,
+        "file": "11_swipe_nonstandard_using_23.feature"
+    },
+    {
+        "scenario": "Perform MSR Debit Cashback with PIN entry Transaction with Tracks_1&2&3 and Tracks_1&2  cards for various card brands",
+        "found_steps": [
+            "CVM Process",
+            "Precondition",
+            "Send Amount",
+            "Card Swipe",
+            "Data Parsing",
+            "Confirmation",
+            "Transaction Completion"
+        ],
+        "missing_steps": [],
+        "is_order_correct": false,
+        "is_valid_script": false,
+        "file": "11_validate_msr_debit_cashback_transaction.feature"
+    },
+    {
+        "scenario": "Not found",
+        "found_steps": [
+            "Card Swipe",
+            "Precondition"
+        ],
+        "missing_steps": [
+            "Send Amount",
+            "Data Parsing",
+            "Confirmation",
+            "CVM Process",
+            "Transaction Completion"
+        ],
+        "is_order_correct": false,
+        "is_valid_script": false,
+        "file": "12_swipe.feature"
+    },
+    {
+        "scenario": "Perform MSR Credit Signature Transaction with Tracks_1&2&3 and Tracks_1&2  cards for various card brands",
+        "found_steps": [
+            "Precondition",
+            "Send Amount",
+            "Card Swipe",
+            "Data Parsing",
+            "Confirmation",
+            "Transaction Completion"
+        ],
+        "missing_steps": [
+            "CVM Process"
+        ],
+        "is_order_correct": false,
+        "is_valid_script": false,
+        "file": "12_validate_msr_credit_signature_transaction.feature"
+    },
+    {
+        "scenario": "Send 23.x Card Read Request insert and remove chip card then swipe .",
+        "found_steps": [
+            "Card Swipe",
+            "Precondition",
+            "Send Amount"
+        ],
+        "missing_steps": [
+            "Data Parsing",
+            "Confirmation",
+            "CVM Process",
+            "Transaction Completion"
+        ],
+        "is_order_correct": false,
+        "is_valid_script": false,
+        "file": "13_insert_tap_then_swipe.feature"
+    },
+    {
+        "scenario": "delete a file from terminal",
+        "found_steps": [
+            "Precondition",
+            "Send Amount",
+            "Card Swipe"
+        ],
+        "missing_steps": [
+            "Data Parsing",
+            "Confirmation",
+            "CVM Process",
+            "Transaction Completion"
+        ],
+        "is_order_correct": false,
+        "is_valid_script": false,
+        "file": "15_test_delete_file_and_package.feature"
+    },
+    {
+        "scenario": "On-Guard SDE DUKPT AES Encryption For MSR Transaction",
+        "found_steps": [
+            "Precondition"
+        ],
+        "missing_steps": [
+            "Send Amount",
+            "Card Swipe",
+            "Data Parsing",
+            "Confirmation",
+            "CVM Process",
+            "Transaction Completion"
+        ],
+        "is_order_correct": false,
+        "is_valid_script": false,
+        "file": "16_validate_SDE_AES_DUKPT_decryption_msr_transaction.feature"
+    },
+    {
+        "scenario": "On-Guard FPE Encryption For MSR Transaction",
+        "found_steps": [
+            "Precondition",
+            "Card Swipe"
+        ],
+        "missing_steps": [
+            "Send Amount",
+            "Data Parsing",
+            "Confirmation",
+            "CVM Process",
+            "Transaction Completion"
+        ],
+        "is_order_correct": false,
+        "is_valid_script": false,
+        "file": "17_validate_step_decryption_OGFPE_simplify.feature"
+    },
+    {
+        "scenario": "Not found",
+        "found_steps": [
+            "Precondition"
+        ],
+        "missing_steps": [
+            "Send Amount",
+            "Card Swipe",
+            "Data Parsing",
+            "Confirmation",
+            "CVM Process",
+            "Transaction Completion"
+        ],
+        "is_order_correct": false,
+        "is_valid_script": false,
+        "file": "disable_chapterX_encryption.feature"
+    },
+    {
+        "scenario": "Not found",
+        "found_steps": [
+            "Precondition"
+        ],
+        "missing_steps": [
+            "Send Amount",
+            "Card Swipe",
+            "Data Parsing",
+            "Confirmation",
+            "CVM Process",
+            "Transaction Completion"
+        ],
+        "is_order_correct": false,
+        "is_valid_script": false,
+        "file": "Disable_onguard_fpe_encryption.feature"
+    },
+    {
+        "scenario": "Not found",
+        "found_steps": [
+            "Precondition"
+        ],
+        "missing_steps": [
+            "Send Amount",
+            "Card Swipe",
+            "Data Parsing",
+            "Confirmation",
+            "CVM Process",
+            "Transaction Completion"
+        ],
+        "is_order_correct": false,
+        "is_valid_script": false,
+        "file": "Disable_onguard_sde_encryption.feature"
+    },
+    {
+        "scenario": "Not found",
+        "found_steps": [
+            "Precondition"
+        ],
+        "missing_steps": [
+            "Send Amount",
+            "Card Swipe",
+            "Data Parsing",
+            "Confirmation",
+            "CVM Process",
+            "Transaction Completion"
+        ],
+        "is_order_correct": false,
+        "is_valid_script": false,
+        "file": "Disable_RSA_encryption.feature"
+    },
+    {
+        "scenario": "Not found",
+        "found_steps": [
+            "Precondition"
+        ],
+        "missing_steps": [
+            "Send Amount",
+            "Card Swipe",
+            "Data Parsing",
+            "Confirmation",
+            "CVM Process",
+            "Transaction Completion"
+        ],
+        "is_order_correct": false,
+        "is_valid_script": false,
+        "file": "Disable_voltage_tep2_encryption.feature"
+    },
+    {
+        "scenario": "Not found",
+        "found_steps": [
+            "Precondition"
+        ],
+        "missing_steps": [
+            "Send Amount",
+            "Card Swipe",
+            "Data Parsing",
+            "Confirmation",
+            "CVM Process",
+            "Transaction Completion"
+        ],
+        "is_order_correct": false,
+        "is_valid_script": false,
+        "file": "Disable_voltage_tep4_encryption.feature"
+    },
+    {
+        "scenario": "Not found",
+        "found_steps": [
+            "Precondition"
+        ],
+        "missing_steps": [
+            "Send Amount",
+            "Card Swipe",
+            "Data Parsing",
+            "Confirmation",
+            "CVM Process",
+            "Transaction Completion"
+        ],
+        "is_order_correct": false,
+        "is_valid_script": false,
+        "file": "Disable_voltage_tep6_encryption.feature"
+    },
+    {
+        "scenario": "Not found",
+        "found_steps": [
+            "Precondition"
+        ],
+        "missing_steps": [
+            "Send Amount",
+            "Card Swipe",
+            "Data Parsing",
+            "Confirmation",
+            "CVM Process",
+            "Transaction Completion"
+        ],
+        "is_order_correct": false,
+        "is_valid_script": false,
+        "file": "Disable_voltage_tep7_encryption.feature"
+    },
+    {
+        "scenario": "Not found",
+        "found_steps": [
+            "Precondition"
+        ],
+        "missing_steps": [
+            "Send Amount",
+            "Card Swipe",
+            "Data Parsing",
+            "Confirmation",
+            "CVM Process",
+            "Transaction Completion"
+        ],
+        "is_order_correct": false,
+        "is_valid_script": false,
+        "file": "Enable_chapterX_encryption.feature"
+    },
+    {
+        "scenario": "Not found",
+        "found_steps": [
+            "Precondition"
+        ],
+        "missing_steps": [
+            "Send Amount",
+            "Card Swipe",
+            "Data Parsing",
+            "Confirmation",
+            "CVM Process",
+            "Transaction Completion"
+        ],
+        "is_order_correct": false,
+        "is_valid_script": false,
+        "file": "Enable_onguard_fpe_encryption.feature"
+    },
+    {
+        "scenario": "Not found",
+        "found_steps": [
+            "Precondition"
+        ],
+        "missing_steps": [
+            "Send Amount",
+            "Card Swipe",
+            "Data Parsing",
+            "Confirmation",
+            "CVM Process",
+            "Transaction Completion"
+        ],
+        "is_order_correct": false,
+        "is_valid_script": false,
+        "file": "Enable_onguard_sde_encryption.feature"
+    },
+    {
+        "scenario": "Not found",
+        "found_steps": [
+            "Precondition"
+        ],
+        "missing_steps": [
+            "Send Amount",
+            "Card Swipe",
+            "Data Parsing",
+            "Confirmation",
+            "CVM Process",
+            "Transaction Completion"
+        ],
+        "is_order_correct": false,
+        "is_valid_script": false,
+        "file": "Enable_RSA_encryption.feature"
+    },
+    {
+        "scenario": "Not found",
+        "found_steps": [
+            "Precondition"
+        ],
+        "missing_steps": [
+            "Send Amount",
+            "Card Swipe",
+            "Data Parsing",
+            "Confirmation",
+            "CVM Process",
+            "Transaction Completion"
+        ],
+        "is_order_correct": false,
+        "is_valid_script": false,
+        "file": "Enable_voltage_tep2_encryption.feature"
+    },
+    {
+        "scenario": "Not found",
+        "found_steps": [
+            "Precondition"
+        ],
+        "missing_steps": [
+            "Send Amount",
+            "Card Swipe",
+            "Data Parsing",
+            "Confirmation",
+            "CVM Process",
+            "Transaction Completion"
+        ],
+        "is_order_correct": false,
+        "is_valid_script": false,
+        "file": "Enable_voltage_tep4_encryption.feature"
+    },
+    {
+        "scenario": "Not found",
+        "found_steps": [
+            "Precondition"
+        ],
+        "missing_steps": [
+            "Send Amount",
+            "Card Swipe",
+            "Data Parsing",
+            "Confirmation",
+            "CVM Process",
+            "Transaction Completion"
+        ],
+        "is_order_correct": false,
+        "is_valid_script": false,
+        "file": "Enable_voltage_tep6_encryption.feature"
+    },
+    {
+        "scenario": "Not found",
+        "found_steps": [
+            "Precondition"
+        ],
+        "missing_steps": [
+            "Send Amount",
+            "Card Swipe",
+            "Data Parsing",
+            "Confirmation",
+            "CVM Process",
+            "Transaction Completion"
+        ],
+        "is_order_correct": false,
+        "is_valid_script": false,
+        "file": "Enable_voltage_tep7_encryption.feature"
+    },
+    {
+        "scenario": "Validate master session pin when encryption is off",
+        "found_steps": [
+            "Precondition",
+            "Send Amount",
+            "Card Swipe",
+            "CVM Process",
+            "Data Parsing"
+        ],
+        "missing_steps": [
+            "Confirmation",
+            "Transaction Completion"
+        ],
+        "is_order_correct": false,
+        "is_valid_script": false,
+        "file": "master_session_pin_when_encryption_off_msr_transaction.feature"
+    },
+    {
+        "scenario": "Perform MSR Credit Signature Transaction with Tracks_1&2&3 and Tracks_1&2  cards for various card brands",
+        "found_steps": [
+            "Precondition",
+            "Send Amount",
+            "Card Swipe",
+            "Data Parsing",
+            "Confirmation",
+            "Transaction Completion"
+        ],
+        "missing_steps": [
+            "CVM Process"
+        ],
+        "is_order_correct": false,
+        "is_valid_script": false,
+        "file": "msr_credit_signature.feature"
+    },
+    {
+        "scenario": "validate track sentinel for msr transaction",
+        "found_steps": [
+            "Precondition",
+            "Send Amount",
+            "Card Swipe",
+            "Data Parsing"
+        ],
+        "missing_steps": [
+            "Confirmation",
+            "CVM Process",
+            "Transaction Completion"
+        ],
+        "is_order_correct": false,
+        "is_valid_script": false,
+        "file": "msr_validate_track_sentinels.feature"
+    },
+    {
+        "scenario": "Instructions to cover testcase TAIS_POS_004",
+        "found_steps": [
+            "Precondition",
+            "Send Amount",
+            "Card Swipe"
+        ],
+        "missing_steps": [
+            "Data Parsing",
+            "Confirmation",
+            "CVM Process",
+            "Transaction Completion"
+        ],
+        "is_order_correct": false,
+        "is_valid_script": false,
+        "file": "TAIS_POS_004.feature"
+    },
+    {
+        "scenario": "Instructions to cover testcase TAIS_POS_005",
+        "found_steps": [
+            "Precondition",
+            "Send Amount",
+            "Card Swipe"
+        ],
+        "missing_steps": [
+            "Data Parsing",
+            "Confirmation",
+            "CVM Process",
+            "Transaction Completion"
+        ],
+        "is_order_correct": false,
+        "is_valid_script": false,
+        "file": "TAIS_POS_005.feature"
+    },
+    {
+        "scenario": "On-Guard SDE Encryption For MSR Transaction",
+        "found_steps": [
+            "Precondition",
+            "Card Swipe"
+        ],
+        "missing_steps": [
+            "Send Amount",
+            "Data Parsing",
+            "Confirmation",
+            "CVM Process",
+            "Transaction Completion"
+        ],
+        "is_order_correct": false,
+        "is_valid_script": false,
+        "file": "Validate_jobs_for_msr_transaction.feature"
+    },
+    {
+        "scenario": "Voltage TEP2 Encryption for MSR transaction",
+        "found_steps": [
+            "Precondition",
+            "Card Swipe",
+            "Data Parsing"
+        ],
+        "missing_steps": [
+            "Send Amount",
+            "Confirmation",
+            "CVM Process",
+            "Transaction Completion"
+        ],
+        "is_order_correct": false,
+        "is_valid_script": false,
+        "file": "validate_voltage_encryption_tep2_for_msr_transaction.feature"
+    },
+    {
+        "scenario": "Voltage TEP4 Encryption for MSR transaction",
+        "found_steps": [
+            "Precondition",
+            "Card Swipe",
+            "Data Parsing"
+        ],
+        "missing_steps": [
+            "Send Amount",
+            "Confirmation",
+            "CVM Process",
+            "Transaction Completion"
+        ],
+        "is_order_correct": false,
+        "is_valid_script": false,
+        "file": "validate_voltage_encryption_tep4_for_msr_transaction.feature"
+    }
+]

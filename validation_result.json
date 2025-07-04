@@ -1,0 +1,101 @@
+{
+    "scenario": "Perform MSR Debit Cashback with PIN entry Transaction with Tracks_1&2&3 and Tracks_1&2  cards for various card brands",
+    "found_steps": [
+        "Precondition",
+        "Send Amount",
+        "Card Swipe",
+        "Data Parsing",
+        "Confirmation",
+        "CVM Process",
+        "Transaction Completion"
+    ],
+    "missing_steps": [],
+    "is_order_correct": true,
+    "is_valid_script": true,
+    "debug": [
+        {
+            "block": "Given I send a 00.x Offline message to the terminal with params:",
+            "label": "Precondition"
+        },
+        {
+            "block": "Then I should receive the 00.x Offline response from terminal with params:",
+            "label": "Precondition"
+        },
+        {
+            "block": "When I send a 13.x amount message to the terminal with:",
+            "label": "Send Amount"
+        },
+        {
+            "block": "Then I should receive the 13.x amount response from terminal with params:",
+            "label": "Send Amount"
+        },
+        {
+            "block": "When I send a 23.x Card Read message to the terminal with:",
+            "label": "Card Swipe"
+        },
+        {
+            "block": "Then I should receive the 23.x Card Read response from terminal with params:",
+            "label": "Card Swipe"
+        },
+        {
+            "block": "When I send a 29.x Get Variable message to the terminal with:",
+            "label": "Data Parsing"
+        },
+        {
+            "block": "Then I should receive the 29.x Get Variable response from terminal with params:",
+            "label": "Data Parsing"
+        },
+        {
+            "block": "When I send a 29.x Get Variable message to the terminal with:",
+            "label": "Data Parsing"
+        },
+        {
+            "block": "Then I should receive the 29.x Get Variable response from terminal with params:",
+            "label": "Data Parsing"
+        },
+        {
+            "block": "When I send a 29.x Get Variable message to the terminal with:",
+            "label": "Data Parsing"
+        },
+        {
+            "block": "Then I should receive the 29.x Get Variable response from terminal with params:",
+            "label": "Data Parsing"
+        },
+        {
+            "block": "When I send a 24.x Form Entry message to the terminal with params:",
+            "label": "Confirmation"
+        },
+        {
+            "block": "Then I should receive the 24.x Form Entry response from terminal with params:",
+            "label": "Confirmation"
+        },
+        {
+            "block": "When I send a 24.x Form Entry message to the terminal with params:",
+            "label": "Confirmation"
+        },
+        {
+            "block": "Then I should receive the 24.x Form Entry response from terminal with params:",
+            "label": "Confirmation"
+        },
+        {
+            "block": "When I send a 31.x PIN Entry message to the terminal with:",
+            "label": "CVM Process"
+        },
+        {
+            "block": "Then I should receive the 31.x PIN Entry response from terminal with params:",
+            "label": "CVM Process"
+        },
+        {
+            "block": "When I send a 24.x Form Entry message to the terminal with params:",
+            "label": "Confirmation"
+        },
+        {
+            "block": "Then I Wait until Element \"title\" contains \"Transaction complete\"",
+            "label": "Transaction Completion"
+        },
+        {
+            "block": "And I should receive the 24.x Form Entry response from terminal with params:",
+            "label": "Confirmation"
+        }
+    ]
+}

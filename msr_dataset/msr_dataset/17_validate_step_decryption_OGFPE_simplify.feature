@@ -1,0 +1,122 @@
+@msr @fpe @00x @61x @23x @62x @dx8000 @ex8000 @dx4000 @rx5000 @rx7000 @known_issue @ARC-5904
+Feature: Validate On-Guard FPE simplify decryption step for MSR Transaction
+"""
+  This feature file Validates decryption step  for FPE simplify
+  ARC-5904: decryption of FPE simplify dont work for PAN lengths<=14 digits
+  """
+
+  Scenario: Enable On-Guard FPE Encryption Configuration format simplify
+
+    Given I send a 00.x Offline message to the terminal with params:
+      | p00_req_reason_code | 0000 |
+
+    Then I should receive the 00.x Offline response from terminal with params:
+      | p00_res_reason_code | 0000 |
+
+    When I have successfully sent "Files/p2p_encryptions/ArcOnguardFPEsimplfy.apk" file using these params:
+      | p62_req_file_name       | ArcOnguardFPEsimplfy.apk |
+      | p62_req_encoding_format | B                        |
+      | p62_req_fast_download   | 1                        |
+      | p62_req_unpack_flag     | 0                        |
+
+    Then I should receive the 62.x Write File response from terminal with params:
+      | p62_res_status      | 0           |
+      | p62_res_file_length | @regexp:\d* |
+
+    When I send a 61.x Configuration Read message to the terminal with:
+      | p61_req_group_num | 91 |
+      | p61_req_index_num | 1  |
+
+    Then I should receive the 61.x Configuration Read response from terminal with params:
+      | p61_res_status                | 2  |
+      | p61_res_group_num             | 91 |
+      | p61_res_index_num             | 1  |
+      | p61_res_data_config_parameter | 2  |
+
+  Scenario Outline: On-Guard FPE Encryption For MSR Transaction
+
+    Given I send a 00.x Offline message to the terminal with params:
+      | p00_req_reason_code | 0000 |
+
+    Then I should receive the 00.x Offline response from terminal with params:
+      | p00_res_reason_code | 0000 |
+
+    And I Wait until Element "title" contains "This Lane Closed"
+
+    When I send a 61.x Configuration Read message to the terminal with:
+      | p61_req_group_num | 91 |
+      | p61_req_index_num | 1  |
+
+    Then I should receive the 61.x Configuration Read response from terminal with params:
+      | p61_res_status                | 2  |
+      | p61_res_group_num             | 91 |
+      | p61_res_index_num             | 1  |
+      | p61_res_data_config_parameter | 2  |
+
+    When I send a 23.x Card Read message to the terminal with:
+      | p23_req_prompt_index   | 311        |
+      | p23_req_form_name      | read_cards |
+      | p23_req_enable_devices | M          |
+
+    Then I Wait until Element "title" contains "Please swipe or insert card"
+
+    And  I wait until Element "btn_cancel" visible
+
+    When Axium swipe magnetic card:
+      | track1 | B<pan>^<name>^<exp_date><code><disc_data_t1> |
+      | track2 | <pan>=<exp_date><code><disc_data_t2>         |
+      | track3 | <additional_data><additional_data>           |
+
+    Then I should receive the 23.x Card Read response from terminal with params:
+      | p23_res_exit_type   | 0                                                            |
+      | p23_res_card_source | M                                                            |
+      | p23_res_track1      | %B<masked_pan>^<name>^<exp_date><code><masked_disc_data_t1>? |
+      | p23_res_track2      | ;<masked_pan>=<exp_date><code><masked_disc_data_t2>?         |
+      | p23_res_track3      | @regexp:^B.+\|.+\|.{20}050006$                               |
+
+
+    Then decrypted field 'p23_res_track3' with ON GUARD Simplify algorithm should match the following data:
+      | track1 | B<pan>^<name>^<exp_date><code><disc_data_t1> |
+      | track2 | @regexp:.*                                   |
+
+    Examples:
+      | card_type  | pan              | name               | exp_date | code | disc_data_t1                 | disc_data_t2    | additional_data      | masked_pan       | masked_disc_data_t1          | masked_disc_data_t2 |
+      | Mastercard | 5413330089020011 | TEST/CARD          | 2412     | 221  | 000000140000000              | 0000014000001   | 01234567890123456789 | 5413330000000011 | 000000000000000              | 0000000000000       |
+      | Mastercard | 5413330089020011 | TEST/CARD          | 2412     | 221  | 000000140000000              | 0000014000001   | 01234567890123456789 | 5413330000000011 | 000000000000000              | 0000000000000       |
+      | Amex       | 374245001731008  | XP CARD 07/VER 2.0 | 2103     | 201  | 150412345                    | 15041234500000  |                      | 374245000001008  | 000000000                    | 00000000000000      |
+      | VISA       | 4264510228395621 | JOHN/SMITH         | 1709     | 206  | 0000000000000000000704001000 | 0000070400100   |                      | 4264510000005621 | 0000000000000000000000000000 | 0000000000000       |
+      | DISCOVER   | 6510000000000091 | CARD/IMAGE 09      | 1712     | 702  | 1000041300000                | 1000041300000   |                      | 6510000000000091 | 0000000000000                | 0000000000000       |
+#      | Diners     | 36039667170472   | PETTITT/JO         | 0012     | 521  | 16010000000000000946         | 1000041300000   |                      | 36039600000472   | 00000000000000000000         | 0000000000000       |
+#      | Diners     | 36070500001335   | CARD/IMAGE 33      | 1712     | 201  | 12010000000000000081000000   | 120100008100000 |                      | 36070500001335   | 00000000000000000000000000   | 000000000000000     |
+      | VISA       | 4761739001010010 | TEST CARD 04       | 2212     | 201  | 16010000000000000946         | 1000041300000   | 01234567890123456789 | 4761730000000010 | 00000000000000000000         | 0000000000000       |
+      | Mastercard | 5413330089099130 | TEST CARD 20       | 2512     | 201  | 16010000000000000946         | 1000041300000   | 01234567890123456789 | 5413330000009130 | 00000000000000000000         | 0000000000000       |
+
+  Scenario: Teardown - Reset to Default State
+
+    Given I send a 00.x Offline message to the terminal with params:
+      | p00_req_reason_code | 0000 |
+
+    Then I should receive the 00.x Offline response from terminal with params:
+      | p00_res_reason_code | 0000 |
+
+    And I Wait until Element "title" contains "This Lane Closed"
+
+    When I have successfully sent "Files/p2p_encryptions/ArcNoEncryption.apk" file using these params:
+      | p62_req_file_name       | ArcNoEncryption.apk |
+      | p62_req_encoding_format | B                   |
+      | p62_req_fast_download   | 1                   |
+      | p62_req_unpack_flag     | 0                   |
+
+    Then I should receive the 62.x Write File response from terminal with params:
+      | p62_res_status      | 0          |
+      | p62_res_file_length | @regexp:.* |
+
+    When I send a 61.x Configuration Read message to the terminal with:
+      | p61_req_group_num | 91 |
+      | p61_req_index_num | 1  |
+
+    Then I should receive the 61.x Configuration Read response from terminal with params:
+      | p61_res_status                | 2  |
+      | p61_res_group_num             | 91 |
+      | p61_res_index_num             | 1  |
+      | p61_res_data_config_parameter | 0  |

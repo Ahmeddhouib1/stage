@@ -1,0 +1,1285 @@
+{
+  "total_files": 74,
+  "valid_files": 3,
+  "invalid_files": 71,
+  "invalid_details": [
+    {
+      "file": "01_dukpt_pin_when_encryption_off_msr_transaction.feature",
+      "scenario": "verify pin block decryption is correct for msr transaction when encryption is off",
+      "steps_found": [
+        "CVM Process",
+        "Card Swipe",
+        "Precondition"
+      ],
+      "missing_required_steps": [
+        "Confirmation",
+        "Data Parsing",
+        "Send Amount"
+      ],
+      "missing_optional_steps": [
+        "Transaction Completion"
+      ],
+      "valid": false
+    },
+    {
+      "file": "01_swipe_using_41.feature",
+      "scenario": "Check MSR flow using 41.x (track1 ,track2)",
+      "steps_found": [
+        "Data Parsing",
+        "Precondition"
+      ],
+      "missing_required_steps": [
+        "Card Swipe",
+        "Confirmation",
+        "Send Amount"
+      ],
+      "missing_optional_steps": [
+        "CVM Process",
+        "Transaction Completion"
+      ],
+      "valid": false
+    },
+    {
+      "file": "01_validate_1track_only_msr_encryption_when_OGSDE.feature",
+      "scenario": "Enable On-Guard SDE Encryption Configuration",
+      "steps_found": [
+        "Card Swipe",
+        "Precondition"
+      ],
+      "missing_required_steps": [
+        "Confirmation",
+        "Data Parsing",
+        "Send Amount"
+      ],
+      "missing_optional_steps": [
+        "CVM Process",
+        "Transaction Completion"
+      ],
+      "valid": false
+    },
+    {
+      "file": "01_validate_chapterX_encryption_msr_transaction.feature",
+      "scenario": "chapter X Encryption For MSR Transaction",
+      "steps_found": [
+        "Card Swipe",
+        "Precondition"
+      ],
+      "missing_required_steps": [
+        "Confirmation",
+        "Data Parsing",
+        "Send Amount"
+      ],
+      "missing_optional_steps": [
+        "CVM Process",
+        "Transaction Completion"
+      ],
+      "valid": false
+    },
+    {
+      "file": "01_validate_on_guard_fpe_encryption_msr_transaction.feature",
+      "scenario": "On-Guard FPE Encryption For MSR Transaction",
+      "steps_found": [
+        "Card Swipe",
+        "Precondition"
+      ],
+      "missing_required_steps": [
+        "Confirmation",
+        "Data Parsing",
+        "Send Amount"
+      ],
+      "missing_optional_steps": [
+        "CVM Process",
+        "Transaction Completion"
+      ],
+      "valid": false
+    },
+    {
+      "file": "01_Validate_on_guard_sde_encryption_for_msr_transaction.feature",
+      "scenario": "On-Guard SDE Encryption For MSR Transaction",
+      "steps_found": [
+        "Card Swipe",
+        "Precondition"
+      ],
+      "missing_required_steps": [
+        "Confirmation",
+        "Data Parsing",
+        "Send Amount"
+      ],
+      "missing_optional_steps": [
+        "CVM Process",
+        "Transaction Completion"
+      ],
+      "valid": false
+    },
+    {
+      "file": "01_Validate_RSA_encryption_for_msr_transaction.feature",
+      "scenario": "RSA Encryption For MSR Transaction",
+      "steps_found": [
+        "Card Swipe",
+        "Precondition"
+      ],
+      "missing_required_steps": [
+        "Confirmation",
+        "Data Parsing",
+        "Send Amount"
+      ],
+      "missing_optional_steps": [
+        "CVM Process",
+        "Transaction Completion"
+      ],
+      "valid": false
+    },
+    {
+      "file": "01_validate_separator_arc-sec_on_guard_sde_encryption_for_manual-entry_transaction.feature",
+      "scenario": "On-Guard SDE Encryption For MSR Transaction",
+      "steps_found": [
+        "Card Swipe",
+        "Precondition"
+      ],
+      "missing_required_steps": [
+        "Confirmation",
+        "Data Parsing",
+        "Send Amount"
+      ],
+      "missing_optional_steps": [
+        "CVM Process",
+        "Transaction Completion"
+      ],
+      "valid": false
+    },
+    {
+      "file": "01_validate_voltage_encryption_tep6_for_msr_transaction.feature",
+      "scenario": "Voltage TEP6 Encryption for MSR transaction",
+      "steps_found": [
+        "Card Swipe",
+        "Data Parsing",
+        "Precondition"
+      ],
+      "missing_required_steps": [
+        "Confirmation",
+        "Send Amount"
+      ],
+      "missing_optional_steps": [
+        "CVM Process",
+        "Transaction Completion"
+      ],
+      "valid": false
+    },
+    {
+      "file": "01_validate_voltage_encryption_tep7_for_msr_transaction.feature",
+      "scenario": "Voltage TEP7 Encryption for MSR transaction",
+      "steps_found": [
+        "Card Swipe",
+        "Data Parsing",
+        "Precondition"
+      ],
+      "missing_required_steps": [
+        "Confirmation",
+        "Send Amount"
+      ],
+      "missing_optional_steps": [
+        "CVM Process",
+        "Transaction Completion"
+      ],
+      "valid": false
+    },
+    {
+      "file": "01_valid_pin_change_with_strong_pin.feature",
+      "scenario": "Perform MSR transaction and change weak pin with a strong entered pin",
+      "steps_found": [
+        "CVM Process",
+        "Card Swipe",
+        "Data Parsing",
+        "Precondition"
+      ],
+      "missing_required_steps": [
+        "Confirmation",
+        "Send Amount"
+      ],
+      "missing_optional_steps": [
+        "Transaction Completion"
+      ],
+      "valid": false
+    },
+    {
+      "file": "01_verify_master_session_pin_for_msr_transaction_when_og_sde_enabled.feature",
+      "scenario": "Enable On-Guard SDE Encryption Configuration",
+      "steps_found": [
+        "CVM Process",
+        "Card Swipe",
+        "Precondition"
+      ],
+      "missing_required_steps": [
+        "Confirmation",
+        "Data Parsing",
+        "Send Amount"
+      ],
+      "missing_optional_steps": [
+        "Transaction Completion"
+      ],
+      "valid": false
+    },
+    {
+      "file": "01_verify_message_29x_variables_396_398_399_400_manual_entry_and_msr.feature",
+      "scenario": "Manual entry transaction with 23.x and 29.x message to verify variables 396 398 399 400",
+      "steps_found": [
+        "Card Swipe",
+        "Data Parsing",
+        "Precondition"
+      ],
+      "missing_required_steps": [
+        "Confirmation",
+        "Send Amount"
+      ],
+      "missing_optional_steps": [
+        "CVM Process",
+        "Transaction Completion"
+      ],
+      "valid": false
+    },
+    {
+      "file": "01_verify_track_encryption_indicator_different_tracks_msr.feature",
+      "scenario": "Enable On-Guard SDE Encryption Configuration",
+      "steps_found": [
+        "Card Swipe",
+        "Precondition"
+      ],
+      "missing_required_steps": [
+        "Confirmation",
+        "Data Parsing",
+        "Send Amount"
+      ],
+      "missing_optional_steps": [
+        "CVM Process",
+        "Transaction Completion"
+      ],
+      "valid": false
+    },
+    {
+      "file": "02_first_entered_pin_is_weak_and_matches_the_second_entered_pin.feature",
+      "scenario": "Perform MSR transaction and enter an invalid PIN where the cardholder will enter the same weak PIN in the first and second attempt",
+      "steps_found": [
+        "CVM Process",
+        "Card Swipe",
+        "Data Parsing",
+        "Precondition"
+      ],
+      "missing_required_steps": [
+        "Confirmation",
+        "Send Amount"
+      ],
+      "missing_optional_steps": [
+        "Transaction Completion"
+      ],
+      "valid": false
+    },
+    {
+      "file": "02_swipe_nonstandard_using_41.feature",
+      "scenario": "Check MSR flow while using Non-Standard cards with two tracks(track1 ,track2)",
+      "steps_found": [
+        "Precondition"
+      ],
+      "missing_required_steps": [
+        "Card Swipe",
+        "Confirmation",
+        "Data Parsing",
+        "Send Amount"
+      ],
+      "missing_optional_steps": [
+        "CVM Process",
+        "Transaction Completion"
+      ],
+      "valid": false
+    },
+    {
+      "file": "02_validate_separator_arc-sec_on_guard_sde_encryption_for_msr_transaction.feature",
+      "scenario": "On-Guard SDE Encryption For MSR Transaction",
+      "steps_found": [
+        "Card Swipe",
+        "Precondition"
+      ],
+      "missing_required_steps": [
+        "Confirmation",
+        "Data Parsing",
+        "Send Amount"
+      ],
+      "missing_optional_steps": [
+        "CVM Process",
+        "Transaction Completion"
+      ],
+      "valid": false
+    },
+    {
+      "file": "02_validate_whitelisting_with_chapterX_encryption_msr_transaction.feature",
+      "scenario": "Enable Whitelisting Configuration",
+      "steps_found": [
+        "Card Swipe",
+        "Precondition"
+      ],
+      "missing_required_steps": [
+        "Confirmation",
+        "Data Parsing",
+        "Send Amount"
+      ],
+      "missing_optional_steps": [
+        "CVM Process",
+        "Transaction Completion"
+      ],
+      "valid": false
+    },
+    {
+      "file": "02_validate_whitelisting_with_on_guard_fpe_for_msr_transaction.feature",
+      "scenario": "Enable Whitelisting Configuration",
+      "steps_found": [
+        "Card Swipe",
+        "Precondition",
+        "Send Amount"
+      ],
+      "missing_required_steps": [
+        "Confirmation",
+        "Data Parsing"
+      ],
+      "missing_optional_steps": [
+        "CVM Process",
+        "Transaction Completion"
+      ],
+      "valid": false
+    },
+    {
+      "file": "02_validate_whitelisting_with_RSA_for_msr_transaction.feature",
+      "scenario": "Enable Whitelisting Configuration",
+      "steps_found": [
+        "Card Swipe",
+        "Data Parsing",
+        "Precondition"
+      ],
+      "missing_required_steps": [
+        "Confirmation",
+        "Send Amount"
+      ],
+      "missing_optional_steps": [
+        "CVM Process",
+        "Transaction Completion"
+      ],
+      "valid": false
+    },
+    {
+      "file": "02_verify_master_session_pin_for_msr_transaction_when_og_fpe_enabled.feature",
+      "scenario": "Enable On-Guard FPE Encryption Configuration",
+      "steps_found": [
+        "CVM Process",
+        "Card Swipe",
+        "Precondition"
+      ],
+      "missing_required_steps": [
+        "Confirmation",
+        "Data Parsing",
+        "Send Amount"
+      ],
+      "missing_optional_steps": [
+        "Transaction Completion"
+      ],
+      "valid": false
+    },
+    {
+      "file": "02_verify_message_29x_variables_396_398_399_400_when_OGFPE.feature",
+      "scenario": "Enable On-Guard FPE Encryption Configuration",
+      "steps_found": [
+        "Card Swipe",
+        "Data Parsing",
+        "Precondition"
+      ],
+      "missing_required_steps": [
+        "Confirmation",
+        "Send Amount"
+      ],
+      "missing_optional_steps": [
+        "CVM Process",
+        "Transaction Completion"
+      ],
+      "valid": false
+    },
+    {
+      "file": "02_verify_track_encryption_indicator_manual_entry.feature",
+      "scenario": "Enable On-Guard SDE Encryption Configuration",
+      "steps_found": [
+        "Card Swipe",
+        "Precondition"
+      ],
+      "missing_required_steps": [
+        "Confirmation",
+        "Data Parsing",
+        "Send Amount"
+      ],
+      "missing_optional_steps": [
+        "CVM Process",
+        "Transaction Completion"
+      ],
+      "valid": false
+    },
+    {
+      "file": "03_first_entered_pin_is_strong_and_matches_the_second_entered_pin.feature",
+      "scenario": "Perform MSR transaction and enter an invalid PIN where the cardholder will enter the same strong PIN in the first and second attempt",
+      "steps_found": [
+        "CVM Process",
+        "Card Swipe",
+        "Data Parsing",
+        "Precondition"
+      ],
+      "missing_required_steps": [
+        "Confirmation",
+        "Send Amount"
+      ],
+      "missing_optional_steps": [
+        "Transaction Completion"
+      ],
+      "valid": false
+    },
+    {
+      "file": "03_swipe_with_req_parsed_fields.feature",
+      "scenario": "Send 41.x Card Read Request then simulate swipe",
+      "steps_found": [
+        "Precondition"
+      ],
+      "missing_required_steps": [
+        "Card Swipe",
+        "Confirmation",
+        "Data Parsing",
+        "Send Amount"
+      ],
+      "missing_optional_steps": [
+        "CVM Process",
+        "Transaction Completion"
+      ],
+      "valid": false
+    },
+    {
+      "file": "03_verify_master_session_pin_for_msr_transaction_when_tep2_enabled.feature",
+      "scenario": "Enable Voltage TEP2 Encryption Configuration",
+      "steps_found": [
+        "CVM Process",
+        "Card Swipe",
+        "Data Parsing",
+        "Precondition"
+      ],
+      "missing_required_steps": [
+        "Confirmation",
+        "Send Amount"
+      ],
+      "missing_optional_steps": [
+        "Transaction Completion"
+      ],
+      "valid": false
+    },
+    {
+      "file": "03_verify_message_29x_variables_396_398_399_400_when_OGSDE.feature",
+      "scenario": "Enable On-Guard SDE Encryption Configuration",
+      "steps_found": [
+        "Card Swipe",
+        "Data Parsing",
+        "Precondition"
+      ],
+      "missing_required_steps": [
+        "Confirmation",
+        "Send Amount"
+      ],
+      "missing_optional_steps": [
+        "CVM Process",
+        "Transaction Completion"
+      ],
+      "valid": false
+    },
+    {
+      "file": "04_invalid_pin_change_third_entered_pin_does_not_match_second_entered_pin.feature",
+      "scenario": "Perform MSR transaction and enter an invalid PIN where the cardholder enter a 3rd entered pin doesnt match the second enetered pin",
+      "steps_found": [
+        "CVM Process",
+        "Card Swipe",
+        "Data Parsing",
+        "Precondition"
+      ],
+      "missing_required_steps": [
+        "Confirmation",
+        "Send Amount"
+      ],
+      "missing_optional_steps": [
+        "Transaction Completion"
+      ],
+      "valid": false
+    },
+    {
+      "file": "04_swipe_non_standard_using_87.feature",
+      "scenario": "Check MSR flow while using 87.x with Non-Standard two tracks(track1 ,track2)",
+      "steps_found": [
+        "Precondition"
+      ],
+      "missing_required_steps": [
+        "Card Swipe",
+        "Confirmation",
+        "Data Parsing",
+        "Send Amount"
+      ],
+      "missing_optional_steps": [
+        "CVM Process",
+        "Transaction Completion"
+      ],
+      "valid": false
+    },
+    {
+      "file": "04_swipe_without_req_parsed_fields.feature",
+      "scenario": "Send 41.x Card Read Request then simulate swipe",
+      "steps_found": [
+        "Precondition"
+      ],
+      "missing_required_steps": [
+        "Card Swipe",
+        "Confirmation",
+        "Data Parsing",
+        "Send Amount"
+      ],
+      "missing_optional_steps": [
+        "CVM Process",
+        "Transaction Completion"
+      ],
+      "valid": false
+    },
+    {
+      "file": "04_verify_master_session_pin_for_msr_transaction_when_tep4_enabled.feature",
+      "scenario": "Enable Voltage TEP4 Encryption Configuration",
+      "steps_found": [
+        "CVM Process",
+        "Card Swipe",
+        "Data Parsing",
+        "Precondition"
+      ],
+      "missing_required_steps": [
+        "Confirmation",
+        "Send Amount"
+      ],
+      "missing_optional_steps": [
+        "Transaction Completion"
+      ],
+      "valid": false
+    },
+    {
+      "file": "05_invalid_pin_change_second_entered_pin_has_10_11digits.feature",
+      "scenario": "Perform MSR transaction and enter an invalid PIN change where the cardholder types the second entered PIN with more than 10 digits",
+      "steps_found": [
+        "CVM Process",
+        "Card Swipe",
+        "Data Parsing",
+        "Precondition"
+      ],
+      "missing_required_steps": [
+        "Confirmation",
+        "Send Amount"
+      ],
+      "missing_optional_steps": [
+        "Transaction Completion"
+      ],
+      "valid": false
+    },
+    {
+      "file": "05_swipe_with_using_87.feature",
+      "scenario": "Check MSR flow while using 87.x with two tracks(track1 ,track2)",
+      "steps_found": [
+        "Precondition"
+      ],
+      "missing_required_steps": [
+        "Card Swipe",
+        "Confirmation",
+        "Data Parsing",
+        "Send Amount"
+      ],
+      "missing_optional_steps": [
+        "CVM Process",
+        "Transaction Completion"
+      ],
+      "valid": false
+    },
+    {
+      "file": "05_validate_on_demand_messages_using_41.feature",
+      "scenario": "On-Demand Messages using 41.x EFT message",
+      "steps_found": [
+        "CVM Process",
+        "Confirmation",
+        "Precondition"
+      ],
+      "missing_required_steps": [
+        "Card Swipe",
+        "Data Parsing",
+        "Send Amount"
+      ],
+      "missing_optional_steps": [
+        "Transaction Completion"
+      ],
+      "valid": false
+    },
+    {
+      "file": "05_verify_master_session_pin_for_msr_transaction_when_tep6_enabled.feature",
+      "scenario": "Enable Voltage TEP6 Encryption Configuration",
+      "steps_found": [
+        "CVM Process",
+        "Card Swipe",
+        "Data Parsing",
+        "Precondition"
+      ],
+      "missing_required_steps": [
+        "Confirmation",
+        "Send Amount"
+      ],
+      "missing_optional_steps": [
+        "Transaction Completion"
+      ],
+      "valid": false
+    },
+    {
+      "file": "06_vaid_pin_change_second_pin_entry_is_more_than_4digits_less_than_10digits.feature",
+      "scenario": "Perform MSR transaction and valid PIN change where the cardholder will type the second entered PIN is more than 4 digits and less than 10 digits",
+      "steps_found": [
+        "CVM Process",
+        "Card Swipe",
+        "Data Parsing",
+        "Precondition"
+      ],
+      "missing_required_steps": [
+        "Confirmation",
+        "Send Amount"
+      ],
+      "missing_optional_steps": [
+        "Transaction Completion"
+      ],
+      "valid": false
+    },
+    {
+      "file": "06_validate_on_demand_messages_using_87.feature",
+      "scenario": "On-Demand Messages using 87.x EFT message",
+      "steps_found": [
+        "CVM Process",
+        "Confirmation",
+        "Precondition"
+      ],
+      "missing_required_steps": [
+        "Card Swipe",
+        "Data Parsing",
+        "Send Amount"
+      ],
+      "missing_optional_steps": [
+        "Transaction Completion"
+      ],
+      "valid": false
+    },
+    {
+      "file": "06_verify_master_session_pin_for_msr_transaction_when_tep7_enabled.feature",
+      "scenario": "Enable Voltage TEP7 Encryption Configuration",
+      "steps_found": [
+        "CVM Process",
+        "Card Swipe",
+        "Data Parsing",
+        "Precondition"
+      ],
+      "missing_required_steps": [
+        "Confirmation",
+        "Send Amount"
+      ],
+      "missing_optional_steps": [
+        "Transaction Completion"
+      ],
+      "valid": false
+    },
+    {
+      "file": "07_invalid_pin_change_second_entered_pin_has_more_than_12digits.feature",
+      "scenario": "Perform MSR transaction and enter an invalid PIN change where the cardholder types the second entered PIN with 12 digits",
+      "steps_found": [
+        "CVM Process",
+        "Card Swipe",
+        "Data Parsing",
+        "Precondition"
+      ],
+      "missing_required_steps": [
+        "Confirmation",
+        "Send Amount"
+      ],
+      "missing_optional_steps": [
+        "Transaction Completion"
+      ],
+      "valid": false
+    },
+    {
+      "file": "07_verify_master_session_pin_for_msr_transaction_when_rsa_enabled.feature",
+      "scenario": "Enable RSA Encryption Configuration",
+      "steps_found": [
+        "CVM Process",
+        "Card Swipe",
+        "Precondition"
+      ],
+      "missing_required_steps": [
+        "Confirmation",
+        "Data Parsing",
+        "Send Amount"
+      ],
+      "missing_optional_steps": [
+        "Transaction Completion"
+      ],
+      "valid": false
+    },
+    {
+      "file": "08_verify_master_session_pin_for_msr_transaction_when_chapterX_enabled.feature",
+      "scenario": "Enable chapterX Encryption Configuration",
+      "steps_found": [
+        "CVM Process",
+        "Card Swipe",
+        "Precondition"
+      ],
+      "missing_required_steps": [
+        "Confirmation",
+        "Data Parsing",
+        "Send Amount"
+      ],
+      "missing_optional_steps": [
+        "Transaction Completion"
+      ],
+      "valid": false
+    },
+    {
+      "file": "10_swipe_one_track.feature",
+      "scenario": "Send 23.x Card Read Request swipe first track",
+      "steps_found": [
+        "Card Swipe",
+        "Precondition"
+      ],
+      "missing_required_steps": [
+        "Confirmation",
+        "Data Parsing",
+        "Send Amount"
+      ],
+      "missing_optional_steps": [
+        "CVM Process",
+        "Transaction Completion"
+      ],
+      "valid": false
+    },
+    {
+      "file": "11_swipe_nonstandard_using_23.feature",
+      "scenario": "Check MSR flow while using Non-Standard cards with two tracks(track1 ,track2)",
+      "steps_found": [
+        "Card Swipe",
+        "Precondition"
+      ],
+      "missing_required_steps": [
+        "Confirmation",
+        "Data Parsing",
+        "Send Amount"
+      ],
+      "missing_optional_steps": [
+        "CVM Process",
+        "Transaction Completion"
+      ],
+      "valid": false
+    },
+    {
+      "file": "12_swipe.feature",
+      "scenario": "Send 23.x Card Read Request then simulate swipe",
+      "steps_found": [
+        "Card Swipe",
+        "Precondition"
+      ],
+      "missing_required_steps": [
+        "Confirmation",
+        "Data Parsing",
+        "Send Amount"
+      ],
+      "missing_optional_steps": [
+        "CVM Process",
+        "Transaction Completion"
+      ],
+      "valid": false
+    },
+    {
+      "file": "13_insert_tap_then_swipe.feature",
+      "scenario": "Send 23.x Card Read Request insert and remove chip card then swipe .",
+      "steps_found": [
+        "Card Swipe",
+        "Precondition",
+        "Send Amount"
+      ],
+      "missing_required_steps": [
+        "Confirmation",
+        "Data Parsing"
+      ],
+      "missing_optional_steps": [
+        "CVM Process",
+        "Transaction Completion"
+      ],
+      "valid": false
+    },
+    {
+      "file": "15_test_delete_file_and_package.feature",
+      "scenario": "delete a file from terminal",
+      "steps_found": [
+        "Card Swipe",
+        "Precondition",
+        "Send Amount"
+      ],
+      "missing_required_steps": [
+        "Confirmation",
+        "Data Parsing"
+      ],
+      "missing_optional_steps": [
+        "CVM Process",
+        "Transaction Completion"
+      ],
+      "valid": false
+    },
+    {
+      "file": "16_validate_SDE_AES_DUKPT_decryption_msr_transaction.feature",
+      "scenario": "Enable OGSDE DUKPT with AES128 Encryption Configuration",
+      "steps_found": [
+        "Precondition"
+      ],
+      "missing_required_steps": [
+        "Card Swipe",
+        "Confirmation",
+        "Data Parsing",
+        "Send Amount"
+      ],
+      "missing_optional_steps": [
+        "CVM Process",
+        "Transaction Completion"
+      ],
+      "valid": false
+    },
+    {
+      "file": "17_validate_step_decryption_OGFPE_simplify.feature",
+      "scenario": "Enable On-Guard FPE Encryption Configuration format simplify",
+      "steps_found": [
+        "Card Swipe",
+        "Precondition"
+      ],
+      "missing_required_steps": [
+        "Confirmation",
+        "Data Parsing",
+        "Send Amount"
+      ],
+      "missing_optional_steps": [
+        "CVM Process",
+        "Transaction Completion"
+      ],
+      "valid": false
+    },
+    {
+      "file": "disable_chapterX_encryption.feature",
+      "scenario": "Teardown - Reset to Default State",
+      "steps_found": [
+        "Precondition"
+      ],
+      "missing_required_steps": [
+        "Card Swipe",
+        "Confirmation",
+        "Data Parsing",
+        "Send Amount"
+      ],
+      "missing_optional_steps": [
+        "CVM Process",
+        "Transaction Completion"
+      ],
+      "valid": false
+    },
+    {
+      "file": "Disable_onguard_fpe_encryption.feature",
+      "scenario": "Teardown - Reset to Default State",
+      "steps_found": [
+        "Precondition"
+      ],
+      "missing_required_steps": [
+        "Card Swipe",
+        "Confirmation",
+        "Data Parsing",
+        "Send Amount"
+      ],
+      "missing_optional_steps": [
+        "CVM Process",
+        "Transaction Completion"
+      ],
+      "valid": false
+    },
+    {
+      "file": "Disable_onguard_sde_encryption.feature",
+      "scenario": "Teardown - Reset to Default State",
+      "steps_found": [
+        "Precondition"
+      ],
+      "missing_required_steps": [
+        "Card Swipe",
+        "Confirmation",
+        "Data Parsing",
+        "Send Amount"
+      ],
+      "missing_optional_steps": [
+        "CVM Process",
+        "Transaction Completion"
+      ],
+      "valid": false
+    },
+    {
+      "file": "Disable_RSA_encryption.feature",
+      "scenario": "Teardown - Reset to Default State",
+      "steps_found": [
+        "Precondition"
+      ],
+      "missing_required_steps": [
+        "Card Swipe",
+        "Confirmation",
+        "Data Parsing",
+        "Send Amount"
+      ],
+      "missing_optional_steps": [
+        "CVM Process",
+        "Transaction Completion"
+      ],
+      "valid": false
+    },
+    {
+      "file": "Disable_voltage_tep2_encryption.feature",
+      "scenario": "Teardown - Reset to Default State",
+      "steps_found": [
+        "Precondition"
+      ],
+      "missing_required_steps": [
+        "Card Swipe",
+        "Confirmation",
+        "Data Parsing",
+        "Send Amount"
+      ],
+      "missing_optional_steps": [
+        "CVM Process",
+        "Transaction Completion"
+      ],
+      "valid": false
+    },
+    {
+      "file": "Disable_voltage_tep4_encryption.feature",
+      "scenario": "Disable Voltage TEP4 Encryption Configuration",
+      "steps_found": [
+        "Precondition"
+      ],
+      "missing_required_steps": [
+        "Card Swipe",
+        "Confirmation",
+        "Data Parsing",
+        "Send Amount"
+      ],
+      "missing_optional_steps": [
+        "CVM Process",
+        "Transaction Completion"
+      ],
+      "valid": false
+    },
+    {
+      "file": "Disable_voltage_tep6_encryption.feature",
+      "scenario": "Teardown - Reset to Default State",
+      "steps_found": [
+        "Precondition"
+      ],
+      "missing_required_steps": [
+        "Card Swipe",
+        "Confirmation",
+        "Data Parsing",
+        "Send Amount"
+      ],
+      "missing_optional_steps": [
+        "CVM Process",
+        "Transaction Completion"
+      ],
+      "valid": false
+    },
+    {
+      "file": "Disable_voltage_tep7_encryption.feature",
+      "scenario": "Teardown - Reset to Default State",
+      "steps_found": [
+        "Precondition"
+      ],
+      "missing_required_steps": [
+        "Card Swipe",
+        "Confirmation",
+        "Data Parsing",
+        "Send Amount"
+      ],
+      "missing_optional_steps": [
+        "CVM Process",
+        "Transaction Completion"
+      ],
+      "valid": false
+    },
+    {
+      "file": "Enable_chapterX_encryption.feature",
+      "scenario": "Enable chapterX Encryption Configuration",
+      "steps_found": [
+        "Precondition"
+      ],
+      "missing_required_steps": [
+        "Card Swipe",
+        "Confirmation",
+        "Data Parsing",
+        "Send Amount"
+      ],
+      "missing_optional_steps": [
+        "CVM Process",
+        "Transaction Completion"
+      ],
+      "valid": false
+    },
+    {
+      "file": "Enable_onguard_fpe_encryption.feature",
+      "scenario": "Enable On-Guard FPE Encryption Configuration",
+      "steps_found": [
+        "Precondition"
+      ],
+      "missing_required_steps": [
+        "Card Swipe",
+        "Confirmation",
+        "Data Parsing",
+        "Send Amount"
+      ],
+      "missing_optional_steps": [
+        "CVM Process",
+        "Transaction Completion"
+      ],
+      "valid": false
+    },
+    {
+      "file": "Enable_onguard_sde_encryption.feature",
+      "scenario": "Enable OGSDE DUKPT with AES128 Encryption Configuration",
+      "steps_found": [
+        "Precondition"
+      ],
+      "missing_required_steps": [
+        "Card Swipe",
+        "Confirmation",
+        "Data Parsing",
+        "Send Amount"
+      ],
+      "missing_optional_steps": [
+        "CVM Process",
+        "Transaction Completion"
+      ],
+      "valid": false
+    },
+    {
+      "file": "Enable_RSA_encryption.feature",
+      "scenario": "Enable RSA Encryption Configuration",
+      "steps_found": [
+        "Precondition"
+      ],
+      "missing_required_steps": [
+        "Card Swipe",
+        "Confirmation",
+        "Data Parsing",
+        "Send Amount"
+      ],
+      "missing_optional_steps": [
+        "CVM Process",
+        "Transaction Completion"
+      ],
+      "valid": false
+    },
+    {
+      "file": "Enable_voltage_tep2_encryption.feature",
+      "scenario": "Enable Voltage TEP2 Encryption Configuration",
+      "steps_found": [
+        "Precondition"
+      ],
+      "missing_required_steps": [
+        "Card Swipe",
+        "Confirmation",
+        "Data Parsing",
+        "Send Amount"
+      ],
+      "missing_optional_steps": [
+        "CVM Process",
+        "Transaction Completion"
+      ],
+      "valid": false
+    },
+    {
+      "file": "Enable_voltage_tep4_encryption.feature",
+      "scenario": "Enable Voltage TEP4 Encryption Configuration",
+      "steps_found": [
+        "Precondition"
+      ],
+      "missing_required_steps": [
+        "Card Swipe",
+        "Confirmation",
+        "Data Parsing",
+        "Send Amount"
+      ],
+      "missing_optional_steps": [
+        "CVM Process",
+        "Transaction Completion"
+      ],
+      "valid": false
+    },
+    {
+      "file": "Enable_voltage_tep6_encryption.feature",
+      "scenario": "Enable Voltage TEP6 Encryption Configuration",
+      "steps_found": [
+        "Precondition"
+      ],
+      "missing_required_steps": [
+        "Card Swipe",
+        "Confirmation",
+        "Data Parsing",
+        "Send Amount"
+      ],
+      "missing_optional_steps": [
+        "CVM Process",
+        "Transaction Completion"
+      ],
+      "valid": false
+    },
+    {
+      "file": "Enable_voltage_tep7_encryption.feature",
+      "scenario": "Enable Voltage TEP7 Encryption Configuration",
+      "steps_found": [
+        "Precondition"
+      ],
+      "missing_required_steps": [
+        "Card Swipe",
+        "Confirmation",
+        "Data Parsing",
+        "Send Amount"
+      ],
+      "missing_optional_steps": [
+        "CVM Process",
+        "Transaction Completion"
+      ],
+      "valid": false
+    },
+    {
+      "file": "master_session_pin_when_encryption_off_msr_transaction.feature",
+      "scenario": "Validate master session pin when encryption is off",
+      "steps_found": [
+        "CVM Process",
+        "Card Swipe",
+        "Data Parsing",
+        "Precondition",
+        "Send Amount"
+      ],
+      "missing_required_steps": [
+        "Confirmation"
+      ],
+      "missing_optional_steps": [
+        "Transaction Completion"
+      ],
+      "valid": false
+    },
+    {
+      "file": "msr_validate_track_sentinels.feature",
+      "scenario": "validate track sentinel for msr transaction",
+      "steps_found": [
+        "Card Swipe",
+        "Data Parsing",
+        "Precondition",
+        "Send Amount"
+      ],
+      "missing_required_steps": [
+        "Confirmation"
+      ],
+      "missing_optional_steps": [
+        "CVM Process",
+        "Transaction Completion"
+      ],
+      "valid": false
+    },
+    {
+      "file": "TAIS_POS_004.feature",
+      "scenario": "Instructions to cover testcase TAIS_POS_004",
+      "steps_found": [
+        "Card Swipe",
+        "Precondition",
+        "Send Amount"
+      ],
+      "missing_required_steps": [
+        "Confirmation",
+        "Data Parsing"
+      ],
+      "missing_optional_steps": [
+        "CVM Process",
+        "Transaction Completion"
+      ],
+      "valid": false
+    },
+    {
+      "file": "TAIS_POS_005.feature",
+      "scenario": "Instructions to cover testcase TAIS_POS_005",
+      "steps_found": [
+        "Card Swipe",
+        "Precondition",
+        "Send Amount"
+      ],
+      "missing_required_steps": [
+        "Confirmation",
+        "Data Parsing"
+      ],
+      "missing_optional_steps": [
+        "CVM Process",
+        "Transaction Completion"
+      ],
+      "valid": false
+    },
+    {
+      "file": "Validate_jobs_for_msr_transaction.feature",
+      "scenario": "Enable On-Guard SDE Encryption Configuration and Update jobs values(7 =PAN from Track2, 2 = Track-2 data, 10 Expiry date from Track1)",
+      "steps_found": [
+        "Card Swipe",
+        "Precondition"
+      ],
+      "missing_required_steps": [
+        "Confirmation",
+        "Data Parsing",
+        "Send Amount"
+      ],
+      "missing_optional_steps": [
+        "CVM Process",
+        "Transaction Completion"
+      ],
+      "valid": false
+    },
+    {
+      "file": "validate_voltage_encryption_tep2_for_msr_transaction.feature",
+      "scenario": "Voltage TEP2 Encryption for MSR transaction",
+      "steps_found": [
+        "Card Swipe",
+        "Data Parsing",
+        "Precondition"
+      ],
+      "missing_required_steps": [
+        "Confirmation",
+        "Send Amount"
+      ],
+      "missing_optional_steps": [
+        "CVM Process",
+        "Transaction Completion"
+      ],
+      "valid": false
+    },
+    {
+      "file": "validate_voltage_encryption_tep4_for_msr_transaction.feature",
+      "scenario": "Voltage TEP4 Encryption for MSR transaction",
+      "steps_found": [
+        "Card Swipe",
+        "Data Parsing",
+        "Precondition"
+      ],
+      "missing_required_steps": [
+        "Confirmation",
+        "Send Amount"
+      ],
+      "missing_optional_steps": [
+        "CVM Process",
+        "Transaction Completion"
+      ],
+      "valid": false
+    }
+  ]
+}
