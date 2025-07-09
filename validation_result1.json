@@ -1,0 +1,20 @@
+{
+    "input_file": "TC01.feature",
+    "is_valid": false,
+    "good_practices": [],
+    "errors": [
+        "Missing tags @tag, @tagBDD, @tagFunctional, @tagSmoke, @tagRegression",
+        "Feature should have a single Scenario",
+        "Scenario Outline should have Examples table",
+        "Given, When, Then steps should be written in the format: 'Given|When|Then' followed by a blank line and the step definition",
+        "Steps should not contain hardcoded values, use variables instead",
+        "Steps should not contain business logic, they should only describe the actions performed",
+        "Step definitions should be written in the format: 'Given|When|Then' followed by a blank line and the step definition",
+        "Step definitions should be written in Gherkin language",
+        "Step definitions should not contain assertions, they should only describe the actions performed",
+        "Assertions should be written in the format: 'Then|Assert|assertion text'",
+        "Examples table should have headers: '| Scenario Name | Given | When | Then | And | But |",
+        "Examples table should have at least one row",
+        "Examples table should have consistent column names"
+    ]
+}

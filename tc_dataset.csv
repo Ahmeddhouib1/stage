@@ -1,0 +1,15 @@
+sentence,label
+"Then I Wait until Element ""title"" contains ""This Lane Closed""",1
+"When I send upp-ws event_ack with status ""ok""",1
+Then I should receive upp-ws event within 50s,1
+Then I should receive post_txn_reset response,1
+"Then I Wait until Element ""title"" contains ""<response_text>""",1
+Then I receive approval_code and status completed,1
+When I setup prompt on display: Executing scenario related to credit sale transaction,1
+When I wait 2 seconds,1
+Then wait Element contains This Lane Closed,0
+Send upp-ws event_ack status ok,0
+Receive post_txn_reset without when,0
+title should have Lane Closed,0
+response code missing in transaction,0
+Then Element title is Lane Closed,0

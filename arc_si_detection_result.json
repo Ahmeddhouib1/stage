@@ -1,0 +1,53 @@
+{
+  "scenario": "Nom de ton scénario",
+  "found_steps": [
+    "Precondition",
+    "Send Amount",
+    "Transaction Completion"
+  ],
+  "missing_steps": [
+    "Card Swipe",
+    "Data Parsing",
+    "Confirmation",
+    "CVM Process"
+  ],
+  "is_order_correct": true,
+  "is_valid_script": false,
+  "debug": [
+    {
+      "label": "Precondition",
+      "pattern": "Given I use upp-ws transaction endpoint",
+      "found": true
+    },
+    {
+      "label": "Send Amount",
+      "pattern": "When I send upp-ws request.",
+      "found": true
+    },
+    {
+      "label": "Card Swipe",
+      "pattern": "When Axium swipe magnetic card",
+      "found": false
+    },
+    {
+      "label": "Data Parsing",
+      "pattern": "Then I should receive upp-ws event subset within 50s",
+      "found": false
+    },
+    {
+      "label": "Confirmation",
+      "pattern": "And I send upp-ws event_ack with status ",
+      "found": false
+    },
+    {
+      "label": "CVM Process",
+      "pattern": "And when I enter pin",
+      "found": false
+    },
+    {
+      "label": "Transaction Completion",
+      "pattern": "When I send upp-ws event_ack with status ",
+      "found": true
+    }
+  ]
+}
