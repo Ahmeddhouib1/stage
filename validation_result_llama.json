@@ -1,0 +1,11 @@
+{
+    "input_file": "TC01.feature",
+    "is_valid": true,
+    "good_practices": [
+        "Utilisation de l'annotation @appium pour spécifier le contexte de l'exécution des tests",
+        "Utilisation de la syntaxe Gherkin pour décrire les scénarios de test",
+        "Utilisation de tables pour spécifier les exemples de données de test"
+    ],
+    "errors": [],
+    "corrected_feature": "(voir corrected.feature)"
+}

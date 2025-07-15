@@ -1,30 +1,25 @@
 import os
 import json
 import re
+import demjson3
 from openai import OpenAI
 from dotenv import load_dotenv
 
-# Charger la clé API depuis .env
+# Charger la clé API
 load_dotenv()
 api_key = os.getenv("TOGETHER_API_KEY")
-
 if not api_key:
     raise ValueError("❌ Clé API Together manquante dans .env")
 
-# Initialisation du client Together.ai
-client = OpenAI(
-    api_key=api_key,
-    base_url="https://api.together.xyz/v1"
-)
-
-# Modèle utilisé
-model = "mistralai/Mistral-7B-Instruct-v0.3"
+# Initialisation client Together.ai
+client = OpenAI(api_key=api_key, base_url="https://api.together.xyz/v1")
 
 # Fichiers
 feature_path = "TC01.feature"
-output_json_path = "validation_result1.json"
+output_json_path = "validation_result.json"
+corrected_feature_path = "corrected.feature"
 
-# Lire le fichier .feature
+# Lecture du fichier feature
 if not os.path.exists(feature_path):
     raise FileNotFoundError(f"❌ Fichier introuvable : {feature_path}")
 
@@ -33,62 +28,104 @@ with open(feature_path, "r", encoding="utf-8") as f:
 
 print("⏳ Envoi à Mistral-7B-Instruct via Together.ai...")
 
-# Prompt structuré pour validation + correction
-response = client.chat.completions.create(
-    model=model,
-    messages=[
-        {
-            "role": "system",
-            "content": (
-                "Tu es un expert en validation de fichiers Gherkin.\n"
-                "Analyse le fichier et retourne uniquement un JSON de structure suivante :\n\n"
-                "{\n"
-                "  \"is_valid\": true ou false,\n"
-                "  \"good_practices\": [liste de bonnes pratiques],\n"
-                "  \"errors\": [liste d’erreurs critiques empêchant l'exécution correcte],\n"
-                "  \"corrected_feature\": \"texte complet du fichier corrigé\"\n"
-                "}\n\n"
-                "⚠️ Aucun texte hors JSON, pas d'explications."
-            )
-        },
-        {
-            "role": "user",
-            "content": f"Voici le fichier Gherkin à corriger et valider :\n\n{feature_code}"
-        }
-    ],
-    temperature=0.3
+# Prompt système
+prompt_system = (
+    "You are a Gherkin validation and correction expert.\n"
+    "You will receive a `.feature` file written in Gherkin syntax.\n"
+    "Return a JSON object ONLY, with the following fields:\n"
+    "{\n"
+    "  \"is_valid\": true or false,\n"
+    "  \"good_practices\": [...],\n"
+    "  \"errors\": [...],\n"
+    "  \"corrected_feature\": \"full corrected feature\"\n"
+    "}\n"
+    "NEVER output any explanation. NEVER wrap anything in markdown. JSON only."
 )
 
-# Nettoyage et extraction JSON
+# Appel API avec max_tokens étendu
+response = client.chat.completions.create(
+    model="mistralai/Mistral-7B-Instruct-v0.3",
+    messages=[
+        {"role": "system", "content": prompt_system},
+        {"role": "user", "content": f"Voici le fichier à valider :\n\n{feature_code}"}
+    ],
+    temperature=0.3,
+    max_tokens=2048  # ⬅️ important pour éviter les coupures
+)
+
+# Récupération brute de la réponse
 result_text = response.choices[0].message.content.strip()
 
-try:
-    json_match = re.search(r"\{[\s\S]*\}", result_text)
-    if not json_match:
-        raise ValueError("❌ Aucun bloc JSON valide trouvé dans la réponse.")
-    result_json = json.loads(json_match.group(0))
-except Exception as e:
-    with open("raw_model_output.txt", "w", encoding="utf-8") as f:
-        f.write(result_text)
-    raise ValueError(f"❌ Réponse JSON invalide : {e}\n💡 Voir raw_model_output.txt")
+# Sauvegarde brute
+with open("raw_model_output.txt", "w", encoding="utf-8") as f:
+    f.write(result_text)
 
-# Construire le fichier final
-final_output = {
-    "input_file": feature_path,
-    "is_valid": result_json.get("is_valid", False),
-    "good_practices": result_json.get("good_practices", []),
-    "errors": result_json.get("errors", []),
-    "corrected_feature": result_json.get("corrected_feature", "")
-}
+# Si le JSON est tronqué, on le signale
+if not result_text.endswith("}"):
+    print("❌ Réponse du modèle tronquée (JSON incomplet).")
+    exit(1)
 
-# Sauvegarde dans un fichier JSON
+# Fonction d'extraction JSON robuste
+def extract_json_fields(text):
+    try:
+        # Supprimer tout avant la 1re accolade
+        start = text.find('{')
+        if start == -1:
+            raise ValueError("Aucune accolade ouvrante trouvée.")
+        text = text[start:]
+
+        # Extraire bloc JSON équilibré
+        depth = 0
+        end = None
+        for i, char in enumerate(text):
+            if char == '{':
+                depth += 1
+            elif char == '}':
+                depth -= 1
+                if depth == 0:
+                    end = i + 1
+                    break
+        if end is None:
+            raise ValueError("Blocs JSON non équilibrés.")
+
+        json_text = text[:end]
+
+        # Nettoyage de corrected_feature
+        match = re.search(r'"corrected_feature"\s*:\s*"(.*?)"\s*(,|\})', json_text, re.DOTALL)
+        if match:
+            corrected_raw = match.group(1)
+
+            # Échappement manuel
+            corrected_clean = corrected_raw.replace('\\', '\\\\')\
+                                           .replace('\n', '\\n')\
+                                           .replace('\r', '\\r')\
+                                           .replace('\t', '\\t')\
+                                           .replace('"', '\\"')
+
+            json_text = json_text[:match.start(1)] + corrected_clean + json_text[match.end(1):]
+
+        # Parsing final
+        return demjson3.decode(json_text)
+
+    except Exception as e:
+        raise ValueError(f"❌ Erreur d'extraction JSON : {e}\n💡 Voir raw_model_output.txt")
+
+# Extraction
+result_json = extract_json_fields(result_text)
+
+# Sauvegarde JSON
 with open(output_json_path, "w", encoding="utf-8") as f:
-    json.dump(final_output, f, indent=4, ensure_ascii=False)
+    json.dump(result_json, f, indent=4, ensure_ascii=False)
 
-# Résultat console
-if final_output["is_valid"]:
+# Sauvegarde feature corrigé
+with open(corrected_feature_path, "w", encoding="utf-8") as f:
+    f.write(result_json["corrected_feature"])
+
+# Affichage
+if result_json.get("is_valid"):
     print("\033[92m✅ Le fichier Gherkin est VALIDE.\033[0m")
 else:
-    print("\033[91m❌ Le fichier Gherkin est INVALIDE. Voir les erreurs et la correction dans le JSON.\033[0m")
+    print("\033[91m❌ Le fichier est INVALIDE. Voir les erreurs dans le JSON.\033[0m")
 
-print(f"📄 Résultat sauvegardé dans : {output_json_path}")
+print(f"📄 JSON sauvegardé dans : {output_json_path}")
+print(f"📝 Feature corrigé : {corrected_feature_path}")

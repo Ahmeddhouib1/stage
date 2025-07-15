@@ -1,20 +1,16 @@
 {
-    "input_file": "TC01.feature",
-    "is_valid": false,
-    "good_practices": [],
+    "is_valid": true,
+    "good_practices": [
+        "Use a single Scenario Outline for all steps related to a single test case.",
+        "Use a single Examples table for all examples related to a single Scenario Outline.",
+        "Use double quotes for string values in the Examples table.",
+        "Use a consistent naming convention for variables in the Examples table."
+    ],
     "errors": [
-        "Missing tags @tag, @tagBDD, @tagFunctional, @tagSmoke, @tagRegression",
-        "Feature should have a single Scenario",
-        "Scenario Outline should have Examples table",
-        "Given, When, Then steps should be written in the format: 'Given|When|Then' followed by a blank line and the step definition",
-        "Steps should not contain hardcoded values, use variables instead",
-        "Steps should not contain business logic, they should only describe the actions performed",
-        "Step definitions should be written in the format: 'Given|When|Then' followed by a blank line and the step definition",
-        "Step definitions should be written in Gherkin language",
-        "Step definitions should not contain assertions, they should only describe the actions performed",
-        "Assertions should be written in the format: 'Then|Assert|assertion text'",
-        "Examples table should have headers: '| Scenario Name | Given | When | Then | And | But |",
-        "Examples table should have at least one row",
-        "Examples table should have consistent column names"
-    ]
+        "The Given, When, Then keywords should be followed by an empty line.",
+        "The JSON block should be indented properly.",
+        "The Examples table should have a header row.",
+        "The Examples table should have a consistent naming convention for variables."
+    ],
+    "corrected_feature": "```gherkin\\n@appium @dx8000 @ex @certif @debit @msr @fiserv @retail\\n\\nFeature: MSR Debit sale transaction using MASTERCARD Card (TC1)\\n\\n  Scenario Outline: Verify user an perform successful, debit sale transaction with MSR\\n    Given Axium pinpad auto enter enable\\n    When  I use upp-ws transaction endpoint\\n    And I setup prompt on display: Executing scenario related to debit Sale transaction MSR using mastercard brand (TC_Number1)\\n    And  I send upp-ws request\\n    Then I should receive upp-ws response\\n    And I Wait until Element \\\"title\\\" contains \\\"Insert, Swipe or Tap Card\\\"\\n    When I wait 2 seconds\\n    And Axium swipe magnetic card:\\n      | track1 |\\n      | track2 | <pan>=<exp_date><service_code><disc_data_t2> |\\n      | track3 |\\n    Then I Wait until Element \\\"title\\\" contains \\\"Cashback ?\"\\n    When I enter pin \\\"1234\\\"\\n    And I click Element \\\"btn_clear\\\"\\n    Then I Wait until Element \\\"fixed_title\\\" contains \\\"Please enter your PIN:\\\"\\n    And I Wait until Element \\\"title\\\" contains \\\"Processing… Please wait\\\"\\n    And  I should receive upp-ws event subset within 50s\\n    When I send upp-ws event_ack with status \\\"ok\\\"\\n    Then I should receive upp-ws event within 50s\\n    When I send upp-ws event_ack with status \\\"ok\\\"\\n    Then I Wait until Element \\\"title\\\" contains \\\"<Response>\\\"\\n    And I wait 1 second\\n    Examples:\\n      | name                    | amount | response_code | Response | pan              | pan_in_response  | exp_date | service_code | mnemonic | brand | exp  | disc_data_t1          | disc_data_t2 |\\n      | FDCSTESTCARD/MASTERCARD | 2500   | 00            | APPROVAL | 4017779999999011 | 4017770000009011 | 2512     | 120          | DB       | Debit | 2512 | 10001111A123456789012 | 0000000001   |```"
 }
