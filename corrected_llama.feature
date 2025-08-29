@@ -9,13 +9,14 @@ Feature: MSR Debit sale transaction using MASTERCARD Card (TC1)
            "type": "sale",
            "payment_type": "debit",
            "amount": {
-             "total": <amount>
+               "total": <amount>
            },
            "txn_status_events": false,
            "display_txn_result": true,
            "confirm_amount": false,
            "token_request": true,
            "manual_entry": true
+
     """
     Then I should receive upp-ws response
     """
@@ -42,26 +43,27 @@ Feature: MSR Debit sale transaction using MASTERCARD Card (TC1)
         "amount":{
         "total":"<amount>"
         },
-        "card": {
-          "brand": "<brand>",
-          "exp": "<exp_date>",
-          "mnemonic": "<mnemonic>",
-          "pan": "<pan_in_response>",
-          "service_code": "<service_code>"
-        },
-        "host": {
-          "approval_code": "@regexp:^$|.*",
-          "response_text": "<Response>",
-          "customer_text":"<Response>",
-          "response_code":"<response_code>",
-          "authorized_amount":"<amount>",
-          "auth_network_id":"0001",
-          "txn_id":"@regexp:^$|.*",
-          "reference_number":"@regexp:^$|.*"
-        },
+            "card": {
+              "brand": "<brand>",
+              "exp": "<exp_date>",
+              "mnemonic": "<mnemonic>",
+              "pan": "<pan_in_response>",
+              "service_code": "<service_code>"
+            },
+            "host": {
+              "approval_code": "@regexp:^$|.*",
+              "response_text": "<Response>",
+            "customer_text":"<Response>",
+            "response_code":"<response_code>",
+            "authorized_amount":"<amount>",
+            "auth_network_id":"0001",
+            "txn_id":"@regexp:^$|.*",
+            "reference_number":"@regexp:^$|.*"
+            },
         "type":"transaction_completed",
         "status":"proceed",
         "source":"msr"
+
     """
     When I send upp-ws event_ack with status "ok"
     Then I should receive upp-ws event within 50s
@@ -72,8 +74,9 @@ Feature: MSR Debit sale transaction using MASTERCARD Card (TC1)
     When I send upp-ws event_ack with status "ok"
     Then I Wait until Element "title" contains "<Response>"
     And I wait 1 second
+
     Examples:
       | name                    | amount | response_code | Response | pan              | pan_in_response  | exp_date | service_code | mnemonic | brand | exp  | disc_data_t1          | disc_data_t2 |
       | FDCSTESTCARD/MASTERCARD | 2500   | 00            | APPROVAL | 4017779999999011 | 4017770000009011 | 2512     | 120          | DB       | Debit | 2512 | 10001111A123456789012 | 0000000001   |"
-}
+
 ```

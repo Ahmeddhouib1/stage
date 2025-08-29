@@ -1,0 +1,12 @@
+{
+    "errors": [
+        "There are some empty values in the examples tables, which might cause issues during execution.",
+        "Some of the step definitions are missing, which will cause errors during execution.",
+        "The feature file is missing a clear description of the feature and the scenarios."
+    ],
+    "good_practices": [
+        "The feature file is well-structured and follows the standard Gherkin syntax.",
+        "The scenarios are clearly defined and easy to understand.",
+        "The use of examples tables is good for testing different scenarios."
+    ]
+}

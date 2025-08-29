@@ -1,0 +1,10 @@
+{
+    "errors": [
+        "Il n'y a pas d'erreur de syntaxe détectée"
+    ],
+    "good_practices": [
+        "Le fichier de feature est bien structuré",
+        "Les scénarios sont clairement définis",
+        "Les exemples sont fournis pour les données de test"
+    ]
+}

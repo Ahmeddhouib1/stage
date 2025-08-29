@@ -1,0 +1,87 @@
+/* Centers the hero and prevents the navbar from overlapping */
+.welcome-container {
+  min-height: 100vh;
+  padding: 120px 20px 80px;        /* top padding clears the fixed navbar */
+  display: grid;
+  place-items: center;
+  text-align: center;
+  color: #fff;
+}
+
+.welcome-box {
+  width: 100%;
+  max-width: 1000px;
+  background: rgba(0, 0, 0, 0.6);
+  padding: clamp(26px, 4vw, 40px);
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.35);
+  animation: fadeIn 900ms ease-out both;
+  backdrop-filter: blur(6px);
+}
+
+.welcome-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 14px;
+  animation: glow 2s infinite alternate;
+}
+
+.welcome-text {
+  font-size: clamp(1rem, 1.1vw + .5rem, 1.2rem);
+  margin-bottom: 6px;
+}
+
+.welcome-sub {
+  font-size: 1rem;
+  margin-bottom: 18px;
+  color: #cfdfe6;
+}
+
+.highlight {
+  color: #00fff0;
+  text-shadow: 0 0 10px #00fff0, 0 0 20px #00fff0;
+}
+
+.welcome-actions {
+  margin-top: 10px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.start-btn {
+  background: linear-gradient(45deg, #00fff0, #6f00ff);
+  border: none;
+  padding: 12px 24px;
+  border-radius: 30px;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, filter .2s;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 18px rgba(0, 255, 255, .35);
+}
+
+.start-btn:hover { transform: scale(1.06); box-shadow: 0 0 22px rgba(0,255,255,.55); }
+.start-btn:active { transform: scale(.98); filter: brightness(.95); }
+
+.start-btn.alt {
+  background: transparent;
+  border: 1px solid rgba(0,255,225,.5);
+  color: #00ffe1;
+  box-shadow: none;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 10px #00fff0; }
+  to   { text-shadow: 0 0 25px #00fff0, 0 0 40px #6f00ff; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

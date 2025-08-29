@@ -1,0 +1,12 @@
+{
+    "errors": [
+        "There are no clear and concise descriptions for the scenarios.",
+        "Some of the step descriptions are not descriptive enough.",
+        "The comments in the feature file are not necessary and can be removed."
+    ],
+    "good_practices": [
+        "The feature file is well-structured and follows the Gherkin syntax.",
+        "The scenarios are clearly defined and easy to understand.",
+        "The use of examples tables is good for testing different scenarios."
+    ]
+}

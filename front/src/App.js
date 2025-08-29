@@ -1,98 +1,69 @@
-import React, { useState } from "react";
-import "./style.css";
+import React from "react";
+import { BrowserRouter, Routes, Route, NavLink, Outlet } from "react-router-dom";
+import "./mainpage.css";
 
-function App() {
-  const [selectedFile, setSelectedFile] = useState(null);
-  const [correctedText, setCorrectedText] = useState("");
-  const [showResult, setShowResult] = useState(false);
+import Welcome from "./Welcome";
+import Validator from "./validator";
+import TestStepsDetector from "./TestStepsDetector";
+import Help from "./Help";
+import Contact from "./Contact";
 
-  const handleFileChange = (event) => {
-    setSelectedFile(event.target.files[0]);
-  };
+import videoBackground from "./video.mp4";
 
-  const handleAnalyse = async () => {
-    if (!selectedFile) return;
-
-    const formData = new FormData();
-    formData.append("file", selectedFile);
-
-    try {
-      const response = await fetch("http://localhost:8000/upload", {
-        method: "POST",
-        body: formData,
-      });
-
-      if (!response.ok) {
-        throw new Error("Erreur du serveur.");
-      }
-
-      const text = await response.text();
-      setCorrectedText(text);
-      setShowResult(true);
-    } catch (error) {
-      alert("❌ Erreur : " + error.message);
-    }
-  };
-
-  const handleDownload = () => {
-    const blob = new Blob([correctedText], { type: "text/plain" });
-    const url = window.URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = "corrected_" + selectedFile.name;
-    a.click();
-    window.URL.revokeObjectURL(url);
-  };
-
-  const handleBack = () => {
-    setShowResult(false);
-    setSelectedFile(null);
-    setCorrectedText("");
-  };
-
+function Layout() {
   return (
-    <div className="app">
-      {!showResult ? (
-        <div className="overlay">
-          <h1>✅ <span className="title-highlight">TestFlow Validator</span></h1>
-          <p className="subtitle">Analyse intelligente de vos fichiers <b>.feature</b></p>
+    <>
+      {/* Background Video */}
+      <video className="bg-video" autoPlay loop muted playsInline>
+        <source src={videoBackground} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
 
-          <div className="form-group">
-            <label htmlFor="file-upload" className="custom-file-upload">
-              📂 Choisir un fichier .feature
-            </label>
-            <input id="file-upload" type="file" onChange={handleFileChange} />
+      {/* Neon Grid + Glow */}
+      <div className="background" />
+      <div className="glow-overlay" />
 
-            <button className="analyse-button" onClick={handleAnalyse} disabled={!selectedFile}>
-              🚀 Analyser le fichier
-            </button>
-          </div>
+      {/* Navigation */}
+      <nav className="navbar">
+        <NavLink to="/" className={({isActive}) => "nav-button" + (isActive ? " active" : "")}>Welcome</NavLink>
+        <NavLink to="/validator" className={({isActive}) => "nav-button" + (isActive ? " active" : "")}>Validator</NavLink>
+        <NavLink to="/detect" className={({isActive}) => "nav-button" + (isActive ? " active" : "")}>Detect Steps</NavLink>
+        <NavLink to="/help" className={({isActive}) => "nav-button" + (isActive ? " active" : "")}>Help</NavLink>
+        <NavLink to="/contact" className={({isActive}) => "nav-button" + (isActive ? " active" : "")}>Contact</NavLink>
+      </nav>
 
-          {selectedFile && (
-            <p className="file-name">✅ Fichier sélectionné : {selectedFile.name}</p>
-          )}
-        </div>
-      ) : (
-        <div className="result-container">
-          <button className="back-button" onClick={handleBack}>⬅ Retour</button>
-
-          <h2>✅ Résultat du fichier corrigé</h2>
-          <textarea readOnly value={correctedText}></textarea>
-
-          <button onClick={handleDownload}>⬇ Télécharger</button>
-
-          <div className="recommendation-box">
-            <h3>🔎 Recommandations :</h3>
-            <ul>
-              <li>✔️ Utilisez un langage clair et cohérent.</li>
-              <li>🧪 Évitez les étapes vagues comme "je clique".</li>
-              <li>📘 Respectez la structure Gherkin : Given / When / Then.</li>
-            </ul>
-          </div>
-        </div>
-      )}
-    </div>
+      {/* Routed page */}
+      <main style={{ minHeight: "100vh", paddingTop: 90 }}>
+        <Outlet />
+      </main>
+    </>
   );
 }
 
-export default App;
+function NotFound() {
+  return (
+    <section style={{ minHeight: "70vh", display: "grid", placeItems: "center", textAlign: "center" }}>
+      <div>
+        <h2>😕 Page not found</h2>
+        <p>Use the navigation above.</p>
+      </div>
+    </section>
+  );
+}
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route element={<Layout />}>
+          <Route path="/" element={<Welcome />} />
+          <Route path="/validator" element={<Validator />} />
+          <Route path="/detect" element={<TestStepsDetector />} />
+          <Route path="/help" element={<Help />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<NotFound />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
+}

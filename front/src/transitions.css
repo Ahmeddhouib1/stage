@@ -1,0 +1,32 @@
+/* transitions.css */
+
+.fade-enter {
+  opacity: 0;
+  transform: scale(0.98);
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 500ms ease, transform 500ms ease;
+}
+
+.fade-exit {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transform: scale(1.02);
+  transition: opacity 500ms ease, transform 500ms ease;
+}
+.fade-appear {
+  opacity: 0;
+  transform: translateY(20px);
+}
+.fade-appear-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 500ms ease-in-out;
+}

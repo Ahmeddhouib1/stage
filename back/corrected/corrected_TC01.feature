@@ -31,7 +31,7 @@ Feature: MSR Debit sale transaction using MASTERCARD Card (TC1)
     When I enter pin "1234"
     And I click Element "btn_clear"
     Then I Wait until Element "fixed_title" contains "Please enter your PIN:"
-    And I Wait until Element "title" contains "Processingâ¦ Please wait"
+    And I Wait until Element "title" contains "Processing… Please wait"
     And I should receive upp-ws event subset within 50s
     """
         "time":"@regexp:^$|.*",
@@ -74,6 +74,4 @@ Feature: MSR Debit sale transaction using MASTERCARD Card (TC1)
     And I wait 1 second
     Examples:
       | name                    | amount | response_code | Response | pan              | pan_in_response  | exp_date | service_code | mnemonic | brand | exp  | disc_data_t1          | disc_data_t2 |
-      | FDCSTESTCARD/MASTERCARD | 2500   | 00            | APPROVAL | 4017779999999011 | 4017770000009011 | 2512     | 120          | DB       | Debit | 2512 | 10001111A123456789012 | 0000000001   |"
-}
-```
+      | FDCSTESTCARD/MASTERCARD | 2500   | 00            | APPROVAL | 4017779999999011 | 4017770000009011 | 2512     | 120          | DB       | Debit | 2512 | 10001111A123456789012 | 0000000001   |

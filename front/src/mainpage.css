@@ -1,0 +1,271 @@
+/* =========================
+   Global Reset & Base
+   ========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --neon-cyan: #00ffe1;
+  --neon-cyan-soft: #00ffd1;
+  --text-primary: #ffffff;
+  --text-secondary: #c5f6ff;
+  --bg-deep: #050509;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", "Segoe UI Emoji", "Segoe UI Symbol";
+  background: var(--bg-deep);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* =========================
+   Background Layers
+   ========================= */
+.bg-video {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: auto;
+  height: auto;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  opacity: 0.4;
+  z-index: -3;
+  pointer-events: none;
+}
+
+.background {
+  position: fixed;
+  top: 0; left: 0;
+  width: 200%; height: 200%;
+  background:
+    radial-gradient(circle, #0ff 0.5px, transparent 0.5px),
+    radial-gradient(circle, #0ff 0.5px, transparent 0.5px);
+  background-position: 0 0, 25px 25px;
+  background-size: 50px 50px;
+  animation: gridMove 60s linear infinite;
+  opacity: 0.04;
+  z-index: -2;
+  pointer-events: none;
+}
+
+.glow-overlay {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(0, 255, 255, 0.1),
+    transparent 70%
+  );
+  animation: pulse 6s ease-in-out infinite;
+  z-index: -1;
+  pointer-events: none;
+}
+
+@keyframes gridMove {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(500px, 500px); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.15; }
+  50% { transform: scale(1.05); opacity: 0.3; }
+}
+
+/* Prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .background { animation: none; }
+  .glow-overlay { animation: none; }
+  .bg-video { opacity: 0.25; }
+}
+
+/* =========================
+   Navbar (works with NavLink)
+   ========================= */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 16px;
+  background: rgba(0, 0, 20, 0.6);
+  backdrop-filter: blur(14px);
+  z-index: 999;
+}
+
+/* Nav "buttons" are actually links */
+.nav-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border: 2px solid var(--neon-cyan);
+  color: var(--neon-cyan);
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-shadow: 0 0 6px var(--neon-cyan);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.nav-button:hover {
+  background: rgba(0, 255, 225, 0.27);
+  color: #fff;
+  transform: translateY(-1px) scale(1.06);
+  box-shadow: 0 0 12px var(--neon-cyan-soft);
+}
+
+/* Active state from NavLink */
+.nav-button.active {
+  background: #00ffe144;
+  color: #fff;
+  transform: scale(1.08);
+  box-shadow: 0 0 14px var(--neon-cyan-soft);
+}
+
+/* Keyboard focus */
+.nav-button:focus-visible {
+  outline: 3px solid #7fffd4;
+  outline-offset: 2px;
+  border-color: #7fffd4;
+}
+
+/* =========================
+   Page Sections (generic)
+   ========================= */
+main {
+  /* Layout component already adds padding-top inline; this is a safe default */
+  padding-top: 90px;
+}
+
+section {
+  min-height: 100vh;
+  padding: 120px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+h1, h2 {
+  font-size: 2.8rem;
+  color: #00f7ff;
+  text-shadow: 0 0 12px #00f7ff, 0 0 24px #00aaff;
+  margin-bottom: 25px;
+}
+
+p {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  max-width: 700px;
+  margin-bottom: 25px;
+}
+
+/* =========================
+   Buttons (generic)
+   ========================= */
+button {
+  background: linear-gradient(135deg, #00f0ff, #0088ff);
+  border: none;
+  border-radius: 50px;
+  color: #000;
+  font-weight: bold;
+  padding: 16px 34px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: 0 0 15px #00cfff;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+button:hover {
+  transform: scale(1.06);
+  box-shadow: 0 0 20px #00f0ff, 0 0 30px #00cfff;
+}
+
+button::after {
+  content: "";
+  position: absolute;
+  top: 0; left: -70%;
+  width: 40%; height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: skewX(-20deg);
+  animation: shine 2.5s infinite;
+}
+
+@keyframes shine {
+  0% { left: -70%; }
+  100% { left: 120%; }
+}
+
+/* =========================
+   Contact Page helpers
+   ========================= */
+#contact form {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+#contact input,
+#contact textarea {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid var(--neon-cyan-soft);
+  background-color: rgba(0, 0, 0, 0.4);
+  color: var(--text-primary);
+  font-size: 1rem;
+}
+
+#contact input::placeholder,
+#contact textarea::placeholder {
+  color: #ccc;
+}
+
+/* Improve field focus visibility */
+#contact input:focus,
+#contact textarea:focus {
+  outline: none;
+  border-color: #7fffd4;
+  box-shadow: 0 0 0 3px rgba(127, 255, 212, 0.2);
+}
+
+/* =========================
+   Responsive
+   ========================= */
+@media (max-width: 900px) {
+  .navbar {
+    gap: 10px;
+    padding: 10px 8px;
+  }
+  .nav-button {
+    padding: 8px 14px;
+    font-size: 0.95rem;
+  }
+  section {
+    padding: 110px 20px 80px;
+  }
+  h1, h2 {
+    font-size: 2.2rem;
+  }
+  p {
+    font-size: 1.05rem;
+  }
+}
